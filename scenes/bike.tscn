@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b2nldleqd7l8"]
+[gd_scene load_steps=4 format=3 uid="uid://b2nldleqd7l8"]
 
 [ext_resource type="Script" uid="uid://cwrke4t7rk702" path="res://scripts/bike.gd" id="1_oy3wg"]
+[ext_resource type="Texture2D" uid="uid://bmbxl2yt5eivn" path="res://assets/bike.png" id="2_77r6i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b0jew"]
 size = Vector2(72, 35)
@@ -16,3 +17,6 @@ offset_left = -72.0
 offset_top = -38.0
 offset_right = 88.0
 offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_77r6i")

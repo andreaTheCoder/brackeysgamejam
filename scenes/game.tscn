@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dx4alm7spt1cb"]
+[gd_scene load_steps=4 format=3 uid="uid://dx4alm7spt1cb"]
 
 [ext_resource type="PackedScene" uid="uid://b2nldleqd7l8" path="res://scenes/bike.tscn" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://ve3kpygen1ju" path="res://scripts/game_manager.gd" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://dl4hmweg3vpy5" path="res://scenes/lane.tscn" id="3_lnu2h"]
 
 [node name="Game" type="Node2D"]
 
@@ -12,3 +13,7 @@ position = Vector2(0, 2)
 
 [node name="Game Manager" type="Node" parent="."]
 script = ExtResource("2_yqjtg")
+
+[node name="Lane" parent="." instance=ExtResource("3_lnu2h")]
+position = Vector2(89, 252)
+scale = Vector2(0.5, 0.503103)

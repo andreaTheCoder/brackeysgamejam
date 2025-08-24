@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://lwmo8c2omq3o"]
+
+[ext_resource type="Script" uid="uid://bmhq2nr0cf1x1" path="res://scripts/NPCcar.gd" id="1_g51ie"]
+[ext_resource type="Texture2D" uid="uid://rsud0xfs8uwt" path="res://assets/npc car sprite.png" id="1_vqilx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vqilx"]
+size = Vector2(433, 177.5)
+
+[node name="Car" type="Area2D"]
+script = ExtResource("1_g51ie")
+SPEED = -300
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(9.99998, -1)
+scale = Vector2(0.617128, 0.43038)
+texture = ExtResource("1_vqilx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(18.5, -1.75)
+shape = SubResource("RectangleShape2D_vqilx")

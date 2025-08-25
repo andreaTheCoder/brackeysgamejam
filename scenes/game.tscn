@@ -6,6 +6,11 @@
 
 [node name="Game" type="Node2D"]
 
+[node name="Coin2" type="Sprite2D" parent="."]
+position = Vector2(3544.19, 149)
+scale = Vector2(31.0028, 1)
+texture = ExtResource("3_lnu2h")
+
 [node name="Bike" parent="." instance=ExtResource("1_uwrxv")]
 position = Vector2(0, 2)
 
@@ -16,11 +21,7 @@ position = Vector2(0, -2)
 script = ExtResource("2_yqjtg")
 
 [node name="Coin" type="Sprite2D" parent="."]
-position = Vector2(-491.5, 146)
-scale = Vector2(4.83854, 1)
-texture = ExtResource("3_lnu2h")
-
-[node name="Coin" type="Sprite2D" parent="Coin"]
-position = Vector2(1152.5, 3)
-scale = Vector2(9.17188, 1)
+position = Vector2(-309, -523)
+rotation = 1.5524
+scale = Vector2(15.272, 1)
 texture = ExtResource("3_lnu2h")

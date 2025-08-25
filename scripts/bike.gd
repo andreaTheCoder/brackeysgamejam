@@ -1,13 +1,12 @@
 extends CharacterBody2D
 
 # X direction movement
-const ACCELERATION = 1000.0
+const X_ACCEL = 1000.0 # X direction acceleration
 const MAX_SPEED = 4000
-const BRAKE_SPEED = 1000 # rate at which you decelerate when spacebar is not pressed
+const X_DECEL = 1000 # rate at which you decelerate when spacebar is let go
 
-# Y direciton movement
-var y_direction = 1 #1 means down, -1 means up
-
+# y deceleration speed
+const Y_DECEL = 10
 # Lane Boundaries
 const MAX_Y_POS = 400
 const MIN_Y_POS = -400
@@ -15,19 +14,18 @@ const MIN_Y_POS = -400
 func _physics_process(delta: float) -> void:
 	# Handle forward movement.
 	if Input.is_action_pressed("forward"):
-		velocity.x += clamp(ACCELERATION*delta, 0, MAX_SPEED) # Add the acceleration to the speed, but only until max speed
+		velocity.x += clamp(X_ACCEL*delta, 0, MAX_SPEED) # Add the acceleration to the speed, but only until max speed
 	else:
-		velocity.x = max(velocity.x - BRAKE_SPEED*delta, 0) # Set velocity to the velocity minus the deceleration, but cap at 0
+		velocity.x = max(velocity.x - X_DECEL*delta, 0) # Set velocity to the velocity minus the deceleration, but cap at 0
 		
 	print(velocity.x)
 	
-	# Get the input direction and handle the movement/deceleration.
-	#y_direction = Input.get_axis("up", "down")
-	#print(y_direction)
-	#if y_direction>0: # bike is moving down
-	#	velocity.y= clamp(ACCELERATION*delta, 0, MAX_SPEED)
+	# Handle up/down movement
+	if Input.is_action_pressed("up"):
+		velocity.y -= clamp(X_ACCEL*delta, 0, MAX_SPEED) # Add the acceleration to the speed, but only until max speed
+	elif Input.is_action_pressed("down"):
+		velocity.y += clamp(X_ACCEL*delta, 0, MAX_SPEED) # Add the acceleration to the speed, but only until max speed
+	else:
+		velocity.y = move_toward(velocity.y, 0, Y_DECEL) # moves velocity towards 0, slowing it down every from by 10 when not pressing up or down
 	
-	#else:
-	#	velocity.y = clamp((velocity.y - BRAKE_SPEED) *delta, MAX_SPEED, 0)
-
 	move_and_slide()

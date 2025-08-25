@@ -16,5 +16,11 @@ position = Vector2(0, -2)
 script = ExtResource("2_yqjtg")
 
 [node name="Coin" type="Sprite2D" parent="."]
-position = Vector2(-123, 146)
+position = Vector2(-491.5, 146)
+scale = Vector2(4.83854, 1)
+texture = ExtResource("3_lnu2h")
+
+[node name="Coin" type="Sprite2D" parent="Coin"]
+position = Vector2(1152.5, 3)
+scale = Vector2(9.17188, 1)
 texture = ExtResource("3_lnu2h")

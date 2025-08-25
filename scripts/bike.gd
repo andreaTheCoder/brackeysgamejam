@@ -18,7 +18,6 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = max(velocity.x - X_DECEL*delta, 0) # Set velocity to the velocity minus the deceleration, but cap at 0
 		
-	print(velocity.x)
 	
 	# Handle up/down movement
 	if Input.is_action_pressed("up"):

@@ -7,9 +7,9 @@ script = ExtResource("1_6c0se")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -1032.0
-offset_top = -85.0
+offset_top = -377.0
 offset_right = 809.0
-offset_bottom = 76.0
+offset_bottom = 170.0
 color = Color(0.835294, 0.843137, 0.843137, 1)
 
 [node name="Spawner" type="Marker2D" parent="."]

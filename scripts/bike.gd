@@ -6,10 +6,8 @@ const MAX_SPEED = 4000
 const X_DECEL = 1000 # rate at which you decelerate when spacebar is let go
 
 # y deceleration speed
-const Y_DECEL = 10
-# Lane Boundaries
-const MAX_Y_POS = 400
-const MIN_Y_POS = -400
+const Y_DECEL = 5
+
 
 func _physics_process(delta: float) -> void:
 	# Handle forward movement.

@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://dl4hmweg3vpy5"]
+[gd_scene load_steps=2 format=3 uid="uid://bo42c7hrfygyp"]
 
 [ext_resource type="Script" uid="uid://dwqnb7taho446" path="res://scripts/lane.gd" id="1_6c0se"]
 
@@ -7,8 +7,8 @@ script = ExtResource("1_6c0se")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -1032.0
-offset_top = -377.0
-offset_right = 809.0
+offset_top = -604.0
+offset_right = 15635.0
 offset_bottom = 170.0
 color = Color(0.835294, 0.843137, 0.843137, 1)
 
@@ -16,5 +16,6 @@ color = Color(0.835294, 0.843137, 0.843137, 1)
 position = Vector2(-1120, 0)
 
 [node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 1.08
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

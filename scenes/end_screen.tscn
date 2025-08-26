@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://gvfjfia6b020"]
+
+[ext_resource type="Script" uid="uid://bpbn0bg6d3e1q" path="res://scripts/end_screen.gd" id="1_6e1uj"]
+[ext_resource type="FontFile" uid="uid://cly85sjrqbosg" path="res://assets/brackeys_platformer_assets 2/fonts/PixelOperator8-Bold.ttf" id="1_kq7ac"]
+
+[node name="end_screen" type="Node2D"]
+script = ExtResource("1_6e1uj")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(-6, -168)
+scale = Vector2(1.70314, 2.50533)
+polygon = PackedVector2Array(-52, 25.7255, 743, 25.098, 738, 355.137, -49, 356.392)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 325.0
+offset_top = 235.0
+offset_right = 811.0
+offset_bottom = 258.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_kq7ac")
+text = "Thank you for the pizza delivery!"

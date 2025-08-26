@@ -1,5 +1,7 @@
 extends Area2D
 
+@onready var game_manager: Node = $"../Game Manager"
+
 const BIKE = preload("res://scenes/bike.tscn")
 var at_house = false
 var game_over_scene:PackedScene = load("res://scenes/end_screen.tscn")
@@ -7,11 +9,11 @@ var game_over_scene:PackedScene = load("res://scenes/end_screen.tscn")
 func _ready() -> void:
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if at_house and Input.is_action_pressed("deliver"):
 		get_tree().change_scene_to_packed(game_over_scene)
+		game_manager.complete_delivery()
 
 func _on_body_entered(body: Node2D) -> void:
 	at_house = true

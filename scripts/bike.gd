@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 # X direction movement
+
 const X_ACCEL = 1000.0 # X direction acceleration
 const MAX_SPEED = 4000
 const X_BACKWARDS_SLOW = .5
@@ -26,7 +27,7 @@ func _physics_process(delta: float) -> void:
 	# Handle up/down movement
 	if Input.is_action_pressed("up") and not stunned:
 		velocity.y -= clamp(X_ACCEL * delta, 0, MAX_SPEED) # Add the acceleration to the speed, but only until max speed
-	elif Input.is_action_pressed("down") and not stunned:
+	elif Input.is_action_pressed("dwdown") and not stunned:
 		velocity.y += clamp(X_ACCEL* delta, 0, MAX_SPEED) # Add the acceleration to the speed, but only until max speed
 	else:
 		velocity.y = move_toward(velocity.y, 0, Y_DECEL) # moves velocity towards 0, slowing it down every from by 10 when not pressing up or down

@@ -22,7 +22,7 @@ func spawn_car():
 	var my_car = car_template.instantiate()
 	my_car.position = spawner.position
 	parent_lane.add_child(my_car)
-
+ 
 # Spawns new car and restarts timer at random interval
 func _on_spawn_timer_timeout() -> void:
 	spawn_car()

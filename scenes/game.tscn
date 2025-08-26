@@ -3,8 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://b2nldleqd7l8" path="res://scenes/bike.tscn" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://ve3kpygen1ju" path="res://scripts/game_manager.gd" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://od0hx2lbegjy" path="res://scenes/lane.tscn" id="3_lnu2h"]
-[ext_resource type="Texture2D" uid="uid://c4egiuhvi2xyb" path="res://icon.svg" id="4_lbhrr"]
-[ext_resource type="PackedScene" uid="uid://bo42c7hrfygyp" path="res://scenes/lane.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://8nvv8hcnnes5" path="res://scenes/target_house.tscn" id="4_lbhrr"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lnu2h"]
@@ -43,6 +41,6 @@ shape = SubResource("WorldBoundaryShape2D_lnu2h")
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(3798, 200)
 scale = Vector2(65.3594, 1)
-texture = ExtResource("4_lbhrr")
+
 [node name="target_house" parent="." instance=ExtResource("4_lbhrr")]
 position = Vector2(777, -37)

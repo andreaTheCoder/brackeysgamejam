@@ -44,3 +44,5 @@ scale = Vector2(65.3594, 1)
 
 [node name="target_house" parent="." instance=ExtResource("4_lbhrr")]
 position = Vector2(777, -37)
+
+[connection signal="body_exited" from="target_house" to="target_house" method="_on_body_exited"]

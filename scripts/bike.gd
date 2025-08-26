@@ -3,7 +3,9 @@ extends CharacterBody2D
 # X direction movement
 const X_ACCEL = 1000.0 # X direction acceleration
 const MAX_SPEED = 4000
-const X_DECEL = 1000 # rate at which you decelerate when spacebar is let go
+const X_BACKWARDS_SLOW = .5
+const DECEL_SPEED = 5
+const BACKWARDS_MAX_SPEED = 2000# rate at which you decelerate when spacebar is let go
 # y deceleration speed
 const Y_DECEL = 5
 
@@ -17,9 +19,10 @@ func _physics_process(delta: float) -> void:
 	# Handle forward movement.
 	if Input.is_action_pressed("forward") and not stunned: 
 		velocity.x += clamp(X_ACCEL*delta, 0, MAX_SPEED) # Add the acceleration to the speed, but only until max speed
+	elif Input.is_action_pressed("backward") and not stunned:
+		velocity.x -= clamp(X_ACCEL*X_BACKWARDS_SLOW*delta, 0, BACKWARDS_MAX_SPEED)
 	else:
-		velocity.x = max(velocity.x - X_DECEL *delta, 0) # Set velocity to the velocity minus the deceleration, but cap at 0
-	
+		velocity.x = move_toward(velocity.x, 0, DECEL_SPEED)
 	# Handle up/down movement
 	if Input.is_action_pressed("up") and not stunned:
 		velocity.y -= clamp(X_ACCEL * delta, 0, MAX_SPEED) # Add the acceleration to the speed, but only until max speed
@@ -39,3 +42,5 @@ func stun():
 
 func _on_stun_timer_timeout() -> void:
 	stunned = false
+	
+	

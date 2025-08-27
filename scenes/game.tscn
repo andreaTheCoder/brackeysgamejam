@@ -49,3 +49,5 @@ scale = Vector2(65.3594, 1)
 
 [node name="target_house" parent="." instance=ExtResource("4_lbhrr")]
 position = Vector2(115, 3)
+collision_layer = 1
+collision_mask = 2

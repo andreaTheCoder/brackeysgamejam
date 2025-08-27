@@ -7,15 +7,28 @@
 script = ExtResource("1_6e1uj")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
-position = Vector2(-6, -168)
-scale = Vector2(1.70314, 2.50533)
+position = Vector2(115.109, -271.267)
+scale = Vector2(4.03216, 6.61986)
 polygon = PackedVector2Array(-52, 25.7255, 743, 25.098, 738, 355.137, -49, 356.392)
 
-[node name="Label" type="Label" parent="."]
-offset_left = 325.0
-offset_top = 235.0
-offset_right = 811.0
-offset_bottom = 258.0
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1470.0
+offset_top = -303.0
+offset_right = 1470.0
+offset_bottom = 303.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_kq7ac")
+theme_override_font_sizes/font_size = 200
 text = "Thank you for the pizza delivery!"
+horizontal_alignment = 1
+autowrap_mode = 2

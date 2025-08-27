@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var SPEED = 1000
+@export var SPEED = 70
 @onready var bike: CharacterBody2D = $"../../Bike"
 
 

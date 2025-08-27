@@ -1,9 +1,7 @@
 extends Node2D
 
-@export var spawn_direction = 1
 @onready var spawn_timer: Timer = $SpawnTimer
 @onready var spawner: Marker2D = $Spawner
-'''
 @onready var parent_lane = get_node("../Lane")
 
 var car_template = preload("res://scenes/NPCcar.tscn")
@@ -24,11 +22,9 @@ func spawn_car():
 	var my_car = car_template.instantiate()
 	my_car.position = spawner.position
 	parent_lane.add_child(my_car)
-	my_car.direction = spawn_direction
  
 # Spawns new car and restarts timer at random interval
 func _on_spawn_timer_timeout() -> void:
 	spawn_car()
 	spawn_timer.wait_time = randf_range(minSpawnTime, maxSpawnTime)
 	spawn_timer.start()
-'''

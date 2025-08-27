@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://gvfjfia6b020"]
+[gd_scene load_steps=3 format=3 uid="uid://ttc4ydh2mtbv"]
 
 [ext_resource type="Script" uid="uid://bpbn0bg6d3e1q" path="res://scripts/end_screen.gd" id="1_6e1uj"]
 [ext_resource type="FontFile" uid="uid://cly85sjrqbosg" path="res://assets/brackeys_platformer_assets 2/fonts/PixelOperator8-Bold.ttf" id="1_kq7ac"]

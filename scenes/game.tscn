@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dx4alm7spt1cb"]
+[gd_scene load_steps=7 format=3 uid="uid://dx4alm7spt1cb"]
 
 [ext_resource type="PackedScene" uid="uid://b2nldleqd7l8" path="res://scenes/bike.tscn" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://ve3kpygen1ju" path="res://scripts/game_manager.gd" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://od0hx2lbegjy" path="res://scenes/lane.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://8nvv8hcnnes5" path="res://scenes/target_house.tscn" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://lwmo8c2omq3o" path="res://scenes/NPCcar.tscn" id="5_iywne"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lnu2h"]
 
@@ -12,11 +13,11 @@
 [node name="UI elements" type="CanvasLayer" parent="."]
 
 [node name="time label" type="Label" parent="UI elements"]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_right = 119.0
+offset_bottom = 69.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
-text = "Hello"
+text = "Time"
 
 [node name="Timer" type="Timer" parent="UI elements/time label"]
 
@@ -82,6 +83,12 @@ collision_mask = 2
 
 [node name="Lane2" parent="." instance=ExtResource("3_lnu2h")]
 position = Vector2(-127, 2)
+scale = Vector2(0.5, 0.5)
+
+[node name="Cars" type="Node" parent="."]
+
+[node name="Car" parent="Cars" instance=ExtResource("5_iywne")]
+position = Vector2(-25, 13)
 scale = Vector2(0.5, 0.5)
 
 [connection signal="timeout" from="UI elements/time label/Timer" to="Game Manager" method="_on_timer_timeout"]

@@ -1,11 +1,12 @@
-extends Area2D
+extends RigidBody2D
 
-@export var SPEED = 70
+@export var SPEED = 0
 @onready var bike: CharacterBody2D = $"../../Bike"
 
 
 func _process(delta: float) -> void:
-	position.x += -SPEED * delta
+	#position.x += -SPEED * delta
+	pass
 
 func _on_body_entered(body: Node2D) -> void:
 	print("this car was stunned")

@@ -63,6 +63,14 @@ rotation = -3.14159
 position = Vector2(-26.0005, -203)
 shape = SubResource("WorldBoundaryShape2D_lnu2h")
 
+[node name="Left Boundary" type="StaticBody2D" parent="World Boundaries"]
+position = Vector2(-178, -5)
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World Boundaries/Left Boundary"]
+position = Vector2(2, -130)
+shape = SubResource("WorldBoundaryShape2D_lnu2h")
+
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(3798, 200)
 scale = Vector2(65.3594, 1)
@@ -72,5 +80,8 @@ position = Vector2(115, 3)
 collision_layer = 1
 collision_mask = 2
 
+[node name="Lane2" parent="." instance=ExtResource("3_lnu2h")]
+position = Vector2(-127, 2)
+scale = Vector2(0.5, 0.5)
+
 [connection signal="timeout" from="UI elements/time label/Timer" to="Game Manager" method="_on_timer_timeout"]
-[connection signal="body_exited" from="target_house" to="target_house" method="_on_body_exited"]

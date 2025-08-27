@@ -8,16 +8,17 @@
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lnu2h"]
 
-[node name="Game" type="Node2D"]
+[node name="game" type="Node2D"]
 
 [node name="UI elements" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
 
 [node name="time label" type="Label" parent="UI elements"]
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
-text = "Hello"
+text = "Timer Label"
 
 [node name="Timer" type="Timer" parent="UI elements/time label"]
 
@@ -29,6 +30,17 @@ offset_bottom = 89.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 56
 text = "$"
+
+[node name="delivery label" type="Label" parent="UI elements"]
+visible = false
+top_level = true
+offset_left = 529.0
+offset_top = 1419.0
+offset_right = 726.0
+offset_bottom = 1442.0
+scale = Vector2(8, 8)
+text = "PRESS SHIFT TO DELIVER!!"
+metadata/_edit_group_ = true
 
 [node name="Bike" parent="." instance=ExtResource("1_uwrxv")]
 unique_name_in_owner = true
@@ -90,7 +102,7 @@ position = Vector2(3798, 200)
 scale = Vector2(65.3594, 1)
 
 [node name="target_house" parent="." instance=ExtResource("4_lbhrr")]
-position = Vector2(115, 3)
+position = Vector2(115, -31)
 collision_layer = 1
 collision_mask = 2
 

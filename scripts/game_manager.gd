@@ -39,7 +39,8 @@ func complete_delivery():
 	set_balance(balance)
 
 func set_balance(balance):
-	money.text = "$" + str(balance)
+	Global.coins += balance
+	money.text = "$" + str(Global.coins)
 # Reset button
 func checkRespawn():
 	if Input.is_action_just_pressed("reset"):

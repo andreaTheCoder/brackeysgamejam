@@ -1,0 +1,28 @@
+extends Node2D
+
+@export var spawn_direction = 1
+@onready var spawn_timer: Timer = $SpawnTimer
+
+var car_template = preload("res://scenes/NPCcar.tscn")
+
+# Set possible min/max wait times for cars to spawn
+const minSpawnTime: float = 1
+const maxSpawnTime: float = 5
+
+
+func _ready() -> void:
+	spawn_timer.start()
+
+# Instaniates car at spawner node
+func spawn_car():
+	print("spawning car")
+	var my_car = car_template.instantiate()
+	my_car.position = position
+	add_child(my_car)
+	my_car.direction = spawn_direction
+ 
+# Spawns new car and restarts timer at random interval
+func _on_spawn_timer_timeout() -> void:
+	spawn_car()
+	spawn_timer.wait_time = randf_range(minSpawnTime, maxSpawnTime)
+	spawn_timer.start()

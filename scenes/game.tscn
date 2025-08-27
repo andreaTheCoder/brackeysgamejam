@@ -9,6 +9,26 @@
 
 [node name="Game" type="Node2D"]
 
+[node name="UI elements" type="CanvasLayer" parent="."]
+
+[node name="time label" type="Label" parent="UI elements"]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Hello"
+
+[node name="Timer" type="Timer" parent="UI elements/time label"]
+
+[node name="money" type="Label" parent="UI elements"]
+offset_left = 997.0
+offset_top = 12.0
+offset_right = 1037.0
+offset_bottom = 89.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 56
+text = "$"
+
 [node name="Bike" parent="." instance=ExtResource("1_uwrxv")]
 z_index = 3
 position = Vector2(0, 2)
@@ -51,3 +71,6 @@ scale = Vector2(65.3594, 1)
 position = Vector2(115, 3)
 collision_layer = 1
 collision_mask = 2
+
+[connection signal="timeout" from="UI elements/time label/Timer" to="Game Manager" method="_on_timer_timeout"]
+[connection signal="body_exited" from="target_house" to="target_house" method="_on_body_exited"]

@@ -17,6 +17,7 @@ func _ready() -> void:
 	add_child(button)
 
 func _button_pressed():
+	print("Next delivery!")
 	get_tree().change_scene_to_packed(game_scene)
 
 func _process(_delta: float) -> void:

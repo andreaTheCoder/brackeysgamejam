@@ -1,5 +1,7 @@
 extends Node
 
+const START_SCREEN = preload("res://scenes/start_screen.tscn")
+
 @onready var timer: Timer = $"../UI elements/time label/Timer"
 @onready var time_label: Label = $"../UI elements/time label"
 @onready var money: Label = $"../UI elements/money"
@@ -13,6 +15,7 @@ var balance = 0
 var time_remaining
 
 func _ready() -> void:
+	get_tree().change_scene_to_packed(START_SCREEN)
 	start_delivery(house_distance)
 
 func _process(_delta: float) -> void:

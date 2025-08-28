@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ttc4ydh2mtbv"]
+[gd_scene load_steps=4 format=3 uid="uid://ttc4ydh2mtbv"]
 
 [ext_resource type="Script" uid="uid://bpbn0bg6d3e1q" path="res://scripts/end_screen.gd" id="1_6e1uj"]
 [ext_resource type="FontFile" uid="uid://cly85sjrqbosg" path="res://assets/brackeys_platformer_assets 2/fonts/PixelOperator8-Bold.ttf" id="1_kq7ac"]
+[ext_resource type="FontFile" uid="uid://cp367s27734md" path="res://assets/brackeys_platformer_assets 2/fonts/PixelOperator8.ttf" id="3_jc7ji"]
 
 [node name="end_screen" type="Node2D"]
 script = ExtResource("1_6e1uj")
@@ -28,7 +29,25 @@ grow_vertical = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_kq7ac")
-theme_override_font_sizes/font_size = 200
-text = "Thank you for the pizza delivery!"
+theme_override_font_sizes/font_size = 80
+text = "Thank you for 
+the pizza 
+delivery!"
 horizontal_alignment = 1
 autowrap_mode = 2
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 404.0
+offset_top = 370.0
+offset_right = 746.0
+offset_bottom = 497.0
+theme_override_fonts/font = ExtResource("3_jc7ji")
+theme_override_font_sizes/font_size = 32
+text = "Next Delivery!"

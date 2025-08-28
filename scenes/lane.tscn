@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=4 uid="uid://od0hx2lbegjy"]
 
 [ext_resource type="Texture2D" uid="uid://cpuf6iofkp2va" path="res://assets/brackeys_platformer_assets 2/sprites/world_tileset.png" id="2_6c0se"]
-[ext_resource type="Script" uid="uid://byys84aifmc3t" path="res://scripts/Chunks.gd" id="2_8qan7"]
+[ext_resource type="Script" path="res://scripts/Chunks.gd" id="2_8qan7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8qan7"]
 texture = ExtResource("2_6c0se")
@@ -146,7 +146,9 @@ tile_map_data = PackedByteArray("AAAAAP//AAAGAAEAAAAAAAAAAAAGAAEAAAABAP//AAAGAAE
 tile_set = SubResource("TileSet_t6mhj")
 
 [node name="Chunks" type="Area2D" parent="."]
-collision_mask = 2
+position = Vector2(24, 0)
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("2_8qan7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Chunks"]

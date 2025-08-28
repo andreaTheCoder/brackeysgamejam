@@ -152,7 +152,7 @@ collision_mask = 2
 script = ExtResource("2_8qan7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Chunks"]
-position = Vector2(15, -3)
+position = Vector2(-24, 0)
 shape = SubResource("RectangleShape2D_t6mhj")
 
 [connection signal="body_entered" from="Chunks" to="Chunks" method="_on_body_entered"]

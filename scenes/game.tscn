@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://dx4alm7spt1cb"]
+[gd_scene load_steps=8 format=3 uid="uid://dx4alm7spt1cb"]
 
+[ext_resource type="FontFile" uid="uid://cly85sjrqbosg" path="res://assets/brackeys_platformer_assets 2/fonts/PixelOperator8-Bold.ttf" id="1_p57ef"]
 [ext_resource type="PackedScene" uid="uid://b2nldleqd7l8" path="res://scenes/bike.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://c8a2pywu578h" path="res://scenes/spawner.tscn" id="2_iywne"]
 [ext_resource type="Script" uid="uid://ve3kpygen1ju" path="res://scripts/game_manager.gd" id="2_yqjtg"]
@@ -7,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://8nvv8hcnnes5" path="res://scenes/target_house.tscn" id="4_lbhrr"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lnu2h"]
+distance = 1.0
 
 [node name="game" type="Node2D"]
 
@@ -17,6 +19,7 @@ unique_name_in_owner = true
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_p57ef")
 theme_override_font_sizes/font_size = 50
 text = "Timer Label"
 
@@ -63,8 +66,11 @@ position = Vector2(-89, 15)
 script = ExtResource("2_yqjtg")
 
 [node name="Lane" parent="." instance=ExtResource("3_lnu2h")]
-position = Vector2(2, 2)
-scale = Vector2(0.5, 0.503103)
+scale = Vector2(0.5, 0.5)
+
+[node name="Lane2" parent="." instance=ExtResource("3_lnu2h")]
+position = Vector2(-128, 0)
+scale = Vector2(0.5, 0.5)
 
 [node name="World Boundaries" type="Node" parent="."]
 
@@ -72,7 +78,7 @@ scale = Vector2(0.5, 0.503103)
 position = Vector2(1, 155)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World Boundaries/Bottom Boundary"]
-position = Vector2(2, -130)
+position = Vector2(-1, -131)
 shape = SubResource("WorldBoundaryShape2D_lnu2h")
 
 [node name="Top Boundary" type="StaticBody2D" parent="World Boundaries"]
@@ -80,7 +86,7 @@ position = Vector2(1, -225)
 rotation = -3.14159
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World Boundaries/Top Boundary"]
-position = Vector2(-26.0005, -203)
+position = Vector2(-20.0005, -201)
 shape = SubResource("WorldBoundaryShape2D_lnu2h")
 
 [node name="Left Boundary" type="StaticBody2D" parent="World Boundaries"]
@@ -95,9 +101,5 @@ shape = SubResource("WorldBoundaryShape2D_lnu2h")
 position = Vector2(115, -31)
 collision_layer = 1
 collision_mask = 2
-
-[node name="Lane2" parent="." instance=ExtResource("3_lnu2h")]
-position = Vector2(-126, 2)
-scale = Vector2(0.5, 0.5)
 
 [connection signal="timeout" from="UI elements/time label/Timer" to="Game Manager" method="_on_timer_timeout"]

@@ -12,6 +12,24 @@ position = Vector2(115.109, -271.267)
 scale = Vector2(4.03216, 6.61986)
 polygon = PackedVector2Array(-52, 25.7255, 743, 25.098, 738, 355.137, -49, 356.392)
 
+[node name="Control" type="Control" parent="Polygon2D"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -28.5477
+offset_top = 40.9778
+offset_right = 11.4523
+offset_bottom = 80.9778
+
+[node name="Button" type="Button" parent="Polygon2D/Control"]
+layout_mode = 0
+offset_left = 404.0
+offset_top = 370.0
+offset_right = 746.0
+offset_bottom = 497.0
+theme_override_fonts/font = ExtResource("3_jc7ji")
+theme_override_font_sizes/font_size = 32
+text = "Next Delivery!"
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Label" type="Label" parent="CanvasLayer"]
@@ -35,19 +53,3 @@ the pizza
 delivery!"
 horizontal_alignment = 1
 autowrap_mode = 2
-
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Button" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 404.0
-offset_top = 370.0
-offset_right = 746.0
-offset_bottom = 497.0
-theme_override_fonts/font = ExtResource("3_jc7ji")
-theme_override_font_sizes/font_size = 32
-text = "Next Delivery!"

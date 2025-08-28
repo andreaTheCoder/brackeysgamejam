@@ -7,6 +7,6 @@ var direction = -1
 func _process(delta: float) -> void:
 	position.x += SPEED * delta * direction
 
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(_body: Node2D) -> void:
 	print("this car was stunned")
 	bike.stun()

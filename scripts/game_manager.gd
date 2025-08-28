@@ -15,7 +15,7 @@ var time_remaining
 func _ready() -> void:
 	start_delivery(house_distance)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	checkRespawn()
 	time_remaining = int(ceil(timer.time_left))
 	time_label.text = str(time_remaining)
@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 # Run when you click a start button
 func start_delivery(distance: int) -> void:
 	delivery_time = distance * difficulty
-	set_balance(balance)
+	set_balance()
 	timer.wait_time = int(delivery_time)
 	timer.start()
 	print("delivery started")
@@ -36,9 +36,9 @@ func complete_delivery():
 	print("You delivered my pizza with ", time_remaining, " seconds remaining")
 	timer.stop()
 	balance += (base_payment + time_remaining * difficulty)
-	set_balance(balance)
+	set_balance()
 
-func set_balance(balance):
+func set_balance():
 	Global.coins += balance
 	money.text = "$" + str(Global.coins)
 # Reset button

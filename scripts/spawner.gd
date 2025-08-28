@@ -7,7 +7,7 @@ var car_template = preload("res://scenes/NPCcar.tscn")
 
 # Set possible min/max wait times for cars to spawn
 const minSpawnTime: float = 1
-const maxSpawnTime: float = 11
+const maxSpawnTime: float = 9
 const STARTING_BEHIND_X = 100 # x that the car spawns behind the player
 
 

@@ -45,3 +45,7 @@ func _on_stun_timer_timeout() -> void:
 	stunned = false
 	
 	
+
+func _on_speed_up_timer_timeout() -> void:
+	Engine.time_scale = 1
+	stunned = false

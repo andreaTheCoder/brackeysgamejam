@@ -3,6 +3,7 @@ extends Node
 @onready var timer: Timer = $"../UI elements/time label/Timer"
 @onready var time_label: Label = $"../UI elements/time label"
 @onready var money: Label = $"../UI elements/money"
+@onready var speed_up_timer: Timer = $"SpeedUp timer"
 
 var delivery_time = 0
 var house_distance = 10
@@ -14,7 +15,9 @@ var time_remaining
 
 func _ready() -> void:
 	start_delivery(house_distance)
-
+	Engine.time_scale = 100
+	speed_up_timer.wait_time = .5
+	speed_up_timer.start()
 func _process(delta: float) -> void:
 	checkRespawn()
 	time_remaining = int(ceil(timer.time_left))

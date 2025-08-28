@@ -62,6 +62,9 @@ position = Vector2(-60, 16)
 [node name="Game Manager" type="Node" parent="."]
 script = ExtResource("2_yqjtg")
 
+[node name="SpeedUp timer" type="Timer" parent="Game Manager"]
+ignore_time_scale = true
+
 [node name="Lane" parent="." instance=ExtResource("3_lnu2h")]
 position = Vector2(2, 2)
 scale = Vector2(0.5, 0.503103)
@@ -101,3 +104,4 @@ position = Vector2(-126, 2)
 scale = Vector2(0.5, 0.5)
 
 [connection signal="timeout" from="UI elements/time label/Timer" to="Game Manager" method="_on_timer_timeout"]
+[connection signal="timeout" from="Game Manager/SpeedUp timer" to="Bike" method="_on_speed_up_timer_timeout"]

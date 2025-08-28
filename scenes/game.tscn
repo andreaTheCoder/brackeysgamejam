@@ -51,7 +51,7 @@ position = Vector2(0, -2)
 zoom = Vector2(10, 10)
 
 [node name="Spawner" parent="Bike" instance=ExtResource("2_iywne")]
-position = Vector2(-60, 0)
+position = Vector2(-60, 1)
 
 [node name="Spawner2" parent="Bike" instance=ExtResource("2_iywne")]
 position = Vector2(-60, -16)

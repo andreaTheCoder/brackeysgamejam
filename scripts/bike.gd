@@ -12,7 +12,7 @@ const Y_DECEL = 0.5
 
 # if car is stunned stunned = 0, meaning that all acceleration is null
 var stunned = false
-const STUN_DURATION = 3
+const STUN_DURATION = 1.4
 
 @onready var stun_timer: Timer = $"Stun Timer"
 

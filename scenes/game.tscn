@@ -51,13 +51,13 @@ position = Vector2(0, -2)
 zoom = Vector2(10, 10)
 
 [node name="Spawner" parent="Bike" instance=ExtResource("2_iywne")]
-position = Vector2(-89, 0)
+position = Vector2(-60, 0)
 
 [node name="Spawner2" parent="Bike" instance=ExtResource("2_iywne")]
-position = Vector2(-89, -15)
+position = Vector2(-60, -16)
 
 [node name="Spawner3" parent="Bike" instance=ExtResource("2_iywne")]
-position = Vector2(-89, 15)
+position = Vector2(-60, 16)
 
 [node name="Game Manager" type="Node" parent="."]
 script = ExtResource("2_yqjtg")

@@ -35,7 +35,6 @@ func _handle_movement(delta):
 	# Handle forward movement.
 	if Input.is_action_pressed("forward") and not stunned:
 		velocity.x = clamp(velocity.x + X_ACCEL * delta, BACKWARDS_MAX_SPEED, MAX_SPEED) # Add the acceleration to the speed, but only until max speed
-		print(velocity.x)
 	elif Input.is_action_pressed("backward") and not stunned:
 		velocity.x = clamp(velocity.x - X_ACCEL * X_BACKWARDS_SLOW * delta, BACKWARDS_MAX_SPEED, MAX_SPEED)
 		if velocity.x > 0: # minor movement fix

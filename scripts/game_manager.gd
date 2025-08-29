@@ -1,7 +1,5 @@
 extends Node
 
-const START_SCREEN = preload("res://scenes/start_screen.tscn")
-
 @onready var timer: Timer = $"../UI elements/time label/Timer"
 @onready var time_label: Label = $"../UI elements/time label"
 @onready var money: Label = $"../UI elements/money"
@@ -25,18 +23,18 @@ func _ready() -> void:
 		instance.position = Vector2(current_house_x, -50)
 		current_house_x += 250
 		get_parent().call_deferred("add_child", instance)
-
 func _process(_delta: float) -> void:
 	checkRespawn()
 	time_remaining = int(ceil(timer.time_left))
-	time_label.text = "Time: " + str(time_remaining)
+	time_label.text = "Tip Timer: " + str(time_remaining)
 
 # Run when you click a start button
 func start_delivery(distance: int) -> void:
 	delivery_time = distance * difficulty
+	Global.coins = balance
 	money.text = "$" + str(Global.coins)
 	timer.wait_time = int(delivery_time)
-	timer.autostart=true
+	timer.start()
 	print("delivery started")
 
 func _on_timer_timeout() -> void:
@@ -45,12 +43,9 @@ func _on_timer_timeout() -> void:
 
 func complete_delivery():
 	timer.stop()
-	balance = (base_payment + time_remaining * difficulty)
-	print("%.2f" % 10.0)
-	print("base_payment: " + str(base_payment))
-	Global.coins += balance
-	money.text = "$" + str("%.2f" % Global.coins)
-	timer.autostart=true
+	balance += (base_payment + time_remaining * difficulty)
+	Global.coins = balance
+	money.text = "$" + str(Global.coins)
 
 # Reset button
 func checkRespawn():

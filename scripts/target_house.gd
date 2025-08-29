@@ -4,6 +4,7 @@ extends Area2D
 @onready var deliveries_left: Label = $"../UI elements/deliveries left"
 @onready var house_sprite: Sprite2D = $House
 @onready var delivery_label = get_tree().get_root().get_node("game").get_node("%UI elements/delivery label")
+@onready var timer: Timer = $"../UI elements/time label/Timer"
 
 const BIKE = preload("res://scenes/bike.tscn")
 const GREEN_HOUSE_IMG = preload("res://assets/Green house.png")
@@ -16,6 +17,7 @@ var delivered = false
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if at_house and Input.is_action_just_pressed("deliver") and !delivered:
+		game_manager.complete_delivery()
 		delivered = true #prevents player from spamming deliver at 1 house
 		print (game_manager.delivery_count)
 		deliveries_left.text = "Deliveries Remaining: " + str(3 - game_manager.delivery_count)
@@ -23,7 +25,11 @@ func _process(_delta: float) -> void:
 			get_tree().change_scene_to_packed(game_over_scene)
 			game_manager.delivery_count = 0
 		else:
+			timer.stop()
 			game_manager.delivery_count += 1
+			timer.wait_time = game_manager.delivery_time
+			timer.start()
+			
 			
 		game_manager.complete_delivery()
 

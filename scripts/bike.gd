@@ -17,6 +17,21 @@ const STUN_DURATION = 1.4
 @onready var stun_timer: Timer = $"Stun Timer"
 
 func _physics_process(delta: float) -> void:
+	_handle_movement(delta)
+	move_and_slide()
+	
+
+func stun():
+	
+	stun_timer.wait_time = STUN_DURATION
+	stun_timer.start()
+	stunned = true
+
+
+func _on_stun_timer_timeout() -> void:
+	stunned = false
+	
+func _handle_movement(delta):
 	# Handle forward movement.
 	if Input.is_action_pressed("forward") and not stunned:
 		velocity.x = clamp(velocity.x + X_ACCEL * delta, BACKWARDS_MAX_SPEED, MAX_SPEED) # Add the acceleration to the speed, but only until max speed
@@ -34,17 +49,4 @@ func _physics_process(delta: float) -> void:
 		velocity.y = clamp(velocity.y + X_ACCEL * delta, BACKWARDS_MAX_SPEED, MAX_SPEED) # Add the acceleration to the speed, but only until max speed
 	else:
 		velocity.y = move_toward(velocity.y, 0, Y_DECEL) # moves velocity towards 0, slowing it down every from by 10 when not pressing up or down
-	
-	move_and_slide()
-
-func stun():
-	
-	stun_timer.wait_time = STUN_DURATION
-	stun_timer.start()
-	stunned = true
-
-
-func _on_stun_timer_timeout() -> void:
-	stunned = false
-	
 	

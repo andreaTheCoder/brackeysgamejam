@@ -19,6 +19,11 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
 }]
 
 [node name="bike" type="CharacterBody2D"]
@@ -37,7 +42,7 @@ shape = SubResource("RectangleShape2D_b0jew")
 rotation = 1.5708
 scale = Vector2(0.03, 0.03)
 sprite_frames = SubResource("SpriteFrames_fdhfo")
+animation = &"new_animation"
 autoplay = "default"
-frame_progress = 0.394186
 
 [connection signal="timeout" from="Stun Timer" to="." method="_on_stun_timer_timeout"]

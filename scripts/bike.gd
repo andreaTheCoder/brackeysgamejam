@@ -22,6 +22,8 @@ func _physics_process(delta: float) -> void:
 		velocity.x = clamp(velocity.x + X_ACCEL * delta, BACKWARDS_MAX_SPEED, MAX_SPEED) # Add the acceleration to the speed, but only until max speed
 	elif Input.is_action_pressed("backward") and not stunned:
 		velocity.x = clamp(velocity.x - X_ACCEL * X_BACKWARDS_SLOW * delta, BACKWARDS_MAX_SPEED, MAX_SPEED)
+		if velocity.x > 0: # minor movement fix
+			velocity.x = move_toward(velocity.x, 0, DECEL_SPEED)
 	else:
 		velocity.x = move_toward(velocity.x, 0, DECEL_SPEED)
 	# Handle up/down movement

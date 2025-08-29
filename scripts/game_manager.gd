@@ -18,7 +18,6 @@ var delivery_count = 1
 
 
 func _ready() -> void:
-	get_tree().change_scene_to_packed(START_SCREEN)
 	start_delivery(house_distance)
 	for i in range(DELIVERIES_PER_DAY):
 		print("house clone created")
@@ -26,6 +25,7 @@ func _ready() -> void:
 		instance.position = Vector2(current_house_x, -50)
 		current_house_x += 250
 		get_parent().call_deferred("add_child", instance)
+	
 func _process(_delta: float) -> void:
 	checkRespawn()
 	time_remaining = int(ceil(timer.time_left))
@@ -37,7 +37,7 @@ func start_delivery(distance: int) -> void:
 	Global.coins = balance
 	money.text = "$" + str(Global.coins)
 	timer.wait_time = int(delivery_time)
-	timer.start()
+	timer.autostart=true
 	print("delivery started")
 
 func _on_timer_timeout() -> void:

@@ -14,5 +14,5 @@ func _button_pressed():
 	get_tree().change_scene_to_packed(game_scene)
 
 func _process(_delta: float) -> void:
-	if Input.is_action_pressed("button"):
+	if Input.is_action_just_pressed("button"):
 		get_tree().change_scene_to_packed(game_scene)

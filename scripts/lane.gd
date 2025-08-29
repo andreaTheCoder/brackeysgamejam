@@ -10,7 +10,7 @@ var car_template = preload("res://scenes/NPCcar.tscn")
 const minSpawnTime: float = 4
 const maxSpawnTime: float = 7
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func _ready() -> void:

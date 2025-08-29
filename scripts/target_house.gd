@@ -18,7 +18,7 @@ func _process(_delta: float) -> void:
 	if at_house and Input.is_action_just_pressed("deliver") and !delivered:
 		delivered = true #prevents player from spamming deliver at 1 house
 		print (game_manager.delivery_count)
-		deliveries_left.text = str(3 - game_manager.delivery_count)
+		deliveries_left.text = "Deliveries Remaining: " + str(3 - game_manager.delivery_count)
 		if game_manager.delivery_count == 3:
 			get_tree().change_scene_to_packed(game_over_scene)
 			game_manager.delivery_count = 0

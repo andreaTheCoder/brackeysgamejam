@@ -26,7 +26,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	checkRespawn()
 	time_remaining = int(ceil(timer.time_left))
-	time_label.text = str(time_remaining)
+	time_label.text = "Time: " + str(time_remaining)
 
 # Run when you click a start button
 func start_delivery(distance: int) -> void:
@@ -42,8 +42,9 @@ func _on_timer_timeout() -> void:
 
 func complete_delivery():
 	timer.stop()
-	balance += (base_payment + time_remaining * difficulty)
+	balance = (base_payment + time_remaining * difficulty)
 	set_balance()
+	timer.start()
 
 func set_balance():
 	Global.coins += balance

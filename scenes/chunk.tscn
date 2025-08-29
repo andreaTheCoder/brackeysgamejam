@@ -137,7 +137,7 @@ texture = ExtResource("1_jtw3q")
 sources/0 = SubResource("TileSetAtlasSource_8qan7")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t6mhj"]
-size = Vector2(256, 100)
+size = Vector2(64, 100)
 
 [node name="Chunk" type="Node2D"]
 
@@ -150,7 +150,7 @@ collision_mask = 2
 script = ExtResource("2_c3gog")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="New Chunk Spawn Detector"]
-position = Vector2(128, 0)
+position = Vector2(48, 0)
 shape = SubResource("RectangleShape2D_t6mhj")
 
 [connection signal="body_entered" from="New Chunk Spawn Detector" to="New Chunk Spawn Detector" method="_on_body_entered"]

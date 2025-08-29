@@ -32,7 +32,6 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_kq7ac")
 theme_override_font_sizes/font_size = 80
 text = "Thank you for 
-the pizza 
 the biscuit 
 delivery!"
 horizontal_alignment = 1

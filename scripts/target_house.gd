@@ -19,9 +19,9 @@ func _process(_delta: float) -> void:
 	if at_house and Input.is_action_just_pressed("deliver") and !delivered:
 		game_manager.complete_delivery()
 		delivered = true #prevents player from spamming deliver at 1 house
-		print (game_manager.delivery_count)
-		deliveries_left.text = "Deliveries Remaining: " + str(3 - game_manager.delivery_count)
-		if game_manager.delivery_count == 3:
+		print ("delivery count ", game_manager.delivery_count)
+		deliveries_left.text = "Deliveries Remaining: " + str(Global.DELIVERIES_PER_DAY - game_manager.delivery_count)
+		if game_manager.delivery_count == Global.DELIVERIES_PER_DAY:
 			get_tree().change_scene_to_packed(game_over_scene)
 			game_manager.delivery_count = 0
 		else:
@@ -29,9 +29,7 @@ func _process(_delta: float) -> void:
 			game_manager.delivery_count += 1
 			timer.wait_time = game_manager.delivery_time
 			timer.start()
-			
-			
-		game_manager.complete_delivery()
+		#game_manager.complete_delivery()
 
 func _on_body_entered(_body: Node2D) -> void:
 		at_house = true

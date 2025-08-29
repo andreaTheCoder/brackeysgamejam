@@ -9,7 +9,6 @@ var house_distance = 10
 var difficulty = 0.7 # smaller number = harder because less time
 const base_payment = 5
 var balance = 0
-const DELIVERIES_PER_DAY = 3
 var time_remaining
 var current_house_x = 250
 var delivery_count = 1
@@ -17,7 +16,7 @@ var delivery_count = 1
 
 func _ready() -> void:
 	start_delivery(house_distance)
-	for i in range(DELIVERIES_PER_DAY):
+	for i in range(Global.DELIVERIES_PER_DAY):
 		print("house clone created")
 		var instance = target_house_prefab.instantiate()
 		instance.position = Vector2(current_house_x, -50)

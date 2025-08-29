@@ -115,7 +115,7 @@ position = Vector2(0, 2)
 
 [node name="Camera2D" type="Camera2D" parent="Bike"]
 position = Vector2(0, -2)
-zoom = Vector2(10, 10)
+zoom = Vector2(7.5, 7.5)
 
 [node name="Spawner" parent="Bike" instance=ExtResource("2_iywne")]
 position = Vector2(-59.6491, 1.16959)

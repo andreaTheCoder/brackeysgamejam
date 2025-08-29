@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Brackeys Game Jam"
-run/main_scene="uid://bv8437dil3uww"
+run/main_scene="uid://dx4alm7spt1cb"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -23,6 +23,7 @@ Global="*res://scripts/global.gd"
 
 window/size/viewport_width=1500
 window/size/viewport_height=1000
+window/stretch/mode="canvas_items"
 
 [input]
 
@@ -74,3 +75,4 @@ button={
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.368627, 0.517647, 0.341176, 1)

@@ -25,7 +25,7 @@ func _ready() -> void:
 		instance.position = Vector2(current_house_x, -50)
 		current_house_x += 250
 		get_parent().call_deferred("add_child", instance)
-	
+
 func _process(_delta: float) -> void:
 	checkRespawn()
 	time_remaining = int(ceil(timer.time_left))
@@ -46,12 +46,11 @@ func _on_timer_timeout() -> void:
 func complete_delivery():
 	timer.stop()
 	balance = (base_payment + time_remaining * difficulty)
-	print("base_paument" + str(base_payment))
-	print(time_remaining)
-	print(balance)
+	print("%.2f" % 10.0)
+	print("base_payment: " + str(base_payment))
 	Global.coins += balance
-	money.text = "$" + str(Global.coins)
-	timer.start()
+	money.text = "$" + str("%.2f" % Global.coins)
+	timer.autostart=true
 
 # Reset button
 func checkRespawn():

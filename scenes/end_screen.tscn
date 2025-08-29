@@ -33,6 +33,7 @@ theme_override_fonts/font = ExtResource("1_kq7ac")
 theme_override_font_sizes/font_size = 80
 text = "Thank you for 
 the pizza 
+the biscuit 
 delivery!"
 horizontal_alignment = 1
 autowrap_mode = 2

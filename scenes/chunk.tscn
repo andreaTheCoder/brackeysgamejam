@@ -9,7 +9,7 @@ size = Vector2(64, 100)
 [node name="Chunk" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.09, 0.09)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_jtw3q")
 
 [node name="New Chunk Spawn Detector" type="Area2D" parent="."]

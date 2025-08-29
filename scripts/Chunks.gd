@@ -6,5 +6,5 @@ var chunk_num = 1
 
 func _on_body_entered(_body: Node2D) -> void:
 	var chunk = chunk_template.instantiate()
-	chunk.position.x = chunk_num * 256
+	chunk.position.x = chunk_num * 72
 	get_parent().call_deferred("add_child", chunk)

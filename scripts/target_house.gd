@@ -1,7 +1,7 @@
 extends Area2D
 
 @onready var game_manager = $"../Game Manager"
-
+@onready var deliveries_left: Label = $"../UI elements/deliveries left"
 @onready var house_sprite: Sprite2D = $House
 @onready var delivery_label = get_tree().get_root().get_node("game").get_node("%UI elements/delivery label")
 
@@ -18,6 +18,7 @@ func _process(_delta: float) -> void:
 	if at_house and Input.is_action_just_pressed("deliver") and !delivered:
 		delivered = true #prevents player from spamming deliver at 1 house
 		print (game_manager.delivery_count)
+		deliveries_left.text = str(3 - game_manager.delivery_count)
 		if game_manager.delivery_count == 3:
 			get_tree().change_scene_to_packed(game_over_scene)
 			game_manager.delivery_count = 0

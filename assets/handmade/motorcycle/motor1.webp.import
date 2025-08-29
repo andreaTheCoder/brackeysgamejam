@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vhudjxad3yq6"
-path="res://.godot/imported/motor2.webp-444e1e408db649b08471f8d341ce0d21.ctex"
+uid="uid://bqvsj0yslvyjh"
+path="res://.godot/imported/motor1.webp-a8842357909875067bd9de8561ea79c2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/motorcycle/motor2.webp"
-dest_files=["res://.godot/imported/motor2.webp-444e1e408db649b08471f8d341ce0d21.ctex"]
+source_file="res://assets/handmade/motorcycle/motor1.webp"
+dest_files=["res://.godot/imported/motor1.webp-a8842357909875067bd9de8561ea79c2.ctex"]
 
 [params]
 

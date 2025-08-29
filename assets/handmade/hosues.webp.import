@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqvsj0yslvyjh"
-path="res://.godot/imported/motor1.webp-bf51e823cb5496b519c7f08d72a97258.ctex"
+uid="uid://cxfrhyvp3fmdh"
+path="res://.godot/imported/hosues.webp-a41d8f69c473232da54391c2b450ab21.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/motorcycle/motor1.webp"
-dest_files=["res://.godot/imported/motor1.webp-bf51e823cb5496b519c7f08d72a97258.ctex"]
+source_file="res://assets/handmade/hosues.webp"
+dest_files=["res://.godot/imported/hosues.webp-a41d8f69c473232da54391c2b450ab21.ctex"]
 
 [params]
 

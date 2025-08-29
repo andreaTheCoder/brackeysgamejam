@@ -31,7 +31,6 @@ func _process(_delta: float) -> void:
 # Run when you click a start button
 func start_delivery(distance: int) -> void:
 	delivery_time = distance * difficulty
-	Global.coins = balance
 	money.text = "$" + str(Global.coins)
 	timer.wait_time = int(delivery_time)
 	timer.start()
@@ -43,12 +42,13 @@ func _on_timer_timeout() -> void:
 
 func complete_delivery():
 	timer.stop()
-	balance += (base_payment + time_remaining * difficulty)
+	balance = (base_payment + time_remaining * difficulty)
 	print("base_paument" + str(base_payment))
 	print(time_remaining)
 	print(balance)
-	Global.coins = balance
+	Global.coins += balance
 	money.text = "$" + str(Global.coins)
+	timer.start()
 
 # Reset button
 func checkRespawn():

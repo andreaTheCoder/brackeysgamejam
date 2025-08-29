@@ -7,6 +7,7 @@
 size = Vector2(29.5, 77.25)
 
 [node name="target_house" type="Area2D"]
+z_index = 5
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_nx08e")

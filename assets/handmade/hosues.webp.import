@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rsud0xfs8uwt"
-path="res://.godot/imported/npc car sprite.png-782c893c2dda4a6eb0eda265ed0b3eb0.ctex"
+uid="uid://cxfrhyvp3fmdh"
+path="res://.godot/imported/hosues.webp-a41d8f69c473232da54391c2b450ab21.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/npc car sprite.png"
-dest_files=["res://.godot/imported/npc car sprite.png-782c893c2dda4a6eb0eda265ed0b3eb0.ctex"]
+source_file="res://assets/handmade/hosues.webp"
+dest_files=["res://.godot/imported/hosues.webp-a41d8f69c473232da54391c2b450ab21.ctex"]
 
 [params]
 

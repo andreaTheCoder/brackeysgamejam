@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dx4alm7spt1cb"]
+[gd_scene load_steps=6 format=3 uid="uid://dx4alm7spt1cb"]
 
 [ext_resource type="PackedScene" uid="uid://b2nldleqd7l8" path="res://scenes/bike.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://c8a2pywu578h" path="res://scenes/spawner.tscn" id="2_iywne"]
 [ext_resource type="Script" uid="uid://ve3kpygen1ju" path="res://scripts/game_manager.gd" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://od0hx2lbegjy" path="res://scenes/chunk.tscn" id="3_lnu2h"]
-[ext_resource type="PackedScene" uid="uid://8nvv8hcnnes5" path="res://scenes/target_house.tscn" id="4_lbhrr"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lnu2h"]
 
@@ -90,10 +89,6 @@ rotation = 1.5708
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World Boundaries/Left Boundary"]
 position = Vector2(2, -130)
 shape = SubResource("WorldBoundaryShape2D_lnu2h")
-
-[node name="target_house" parent="." instance=ExtResource("4_lbhrr")]
-position = Vector2(115, -31)
-collision_layer = 1
 
 [node name="Lane2" parent="." instance=ExtResource("3_lnu2h")]
 position = Vector2(-126, 2)

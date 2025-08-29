@@ -12,6 +12,9 @@ var balance = 0
 const DELIVERIES_PER_DAY = 3
 var time_remaining
 var current_house_x = 250
+var delivery_count = 1
+
+
 func _ready() -> void:
 	start_delivery(house_distance)
 	for i in range(DELIVERIES_PER_DAY):
@@ -38,7 +41,6 @@ func _on_timer_timeout() -> void:
 	timer.stop()
 
 func complete_delivery():
-	print("You delivered my pizza with ", time_remaining, " seconds remaining")
 	timer.stop()
 	balance += (base_payment + time_remaining * difficulty)
 	set_balance()

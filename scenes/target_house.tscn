@@ -4,11 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://b7s8lnjyghdgr" path="res://assets/house.jpg" id="2_ckt2h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4hs0r"]
-size = Vector2(29.5, 77.25)
+size = Vector2(83, 1000)
 
 [node name="target_house" type="Area2D"]
 collision_layer = 2
-collision_mask = 2
 script = ExtResource("1_nx08e")
 
 [node name="House" type="Sprite2D" parent="."]
@@ -17,7 +16,7 @@ scale = Vector2(0.0137756, 0.0137756)
 texture = ExtResource("2_ckt2h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 18.375)
+position = Vector2(9.5, -1)
 shape = SubResource("RectangleShape2D_4hs0r")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

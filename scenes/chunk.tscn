@@ -4,16 +4,17 @@
 [ext_resource type="Texture2D" uid="uid://cc2s04n6vw50l" path="res://assets/chunk.webp" id="2_jtw3q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t6mhj"]
-size = Vector2(256, 100)
+size = Vector2(20, 125.5)
 
 [node name="Chunk" type="Node2D"]
 
 [node name="New Chunk Spawn Detector" type="Area2D" parent="."]
+position = Vector2(24, 0)
 collision_mask = 2
 script = ExtResource("2_c3gog")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="New Chunk Spawn Detector"]
-position = Vector2(128, 0)
+position = Vector2(-4, -3)
 shape = SubResource("RectangleShape2D_t6mhj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

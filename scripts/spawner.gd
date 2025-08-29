@@ -17,6 +17,7 @@ func _ready() -> void:
 
 # Instaniates car at spawner node
 func spawn_car():
+	print("spawning car")
 	var my_car = car_template.instantiate()
 	my_car.position.x = get_parent().position.x - STARTING_BEHIND_X
 	my_car.position.y = position.y

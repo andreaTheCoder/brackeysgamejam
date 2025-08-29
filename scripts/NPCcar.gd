@@ -1,6 +1,6 @@
 extends Area2D
 
-const SPEED = 20
+const SPEED = 75
 var direction = -1
 @onready var bike: CharacterBody2D = $"../Bike"
 

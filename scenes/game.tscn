@@ -6,8 +6,69 @@
 [ext_resource type="PackedScene" uid="uid://od0hx2lbegjy" path="res://scenes/chunk.tscn" id="3_lnu2h"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lnu2h"]
+distance = 0.999941
 
 [node name="game" type="Node2D"]
+
+[node name="prespawned lanes" type="Node" parent="."]
+
+[node name="Lane" parent="prespawned lanes" instance=ExtResource("3_lnu2h")]
+scale = Vector2(0.5, 0.5)
+
+[node name="Lane2" parent="prespawned lanes" instance=ExtResource("3_lnu2h")]
+position = Vector2(-72, 0)
+scale = Vector2(0.5, 0.5)
+
+[node name="ColorRect3" type="ColorRect" parent="prespawned lanes/Lane2"]
+offset_left = 52.0
+offset_top = -66.0
+offset_right = 96.0
+offset_bottom = -38.0
+color = Color(0.6, 0.6, 0.6, 1)
+
+[node name="Lane3" parent="prespawned lanes" instance=ExtResource("3_lnu2h")]
+position = Vector2(-144, 0)
+scale = Vector2(0.5, 0.5)
+
+[node name="ColorRect3" type="ColorRect" parent="prespawned lanes/Lane3"]
+offset_left = 52.0
+offset_top = -66.0
+offset_right = 100.0
+offset_bottom = -38.0
+color = Color(0.6, 0.6, 0.6, 1)
+
+[node name="Lane4" parent="prespawned lanes" instance=ExtResource("3_lnu2h")]
+position = Vector2(72, 0)
+scale = Vector2(0.5, 0.5)
+
+[node name="ColorRect3" type="ColorRect" parent="prespawned lanes/Lane4"]
+offset_left = 52.0
+offset_top = -66.0
+offset_right = 100.0
+offset_bottom = -38.0
+color = Color(0.6, 0.6, 0.6, 1)
+
+[node name="Lane5" parent="prespawned lanes" instance=ExtResource("3_lnu2h")]
+position = Vector2(144, 0)
+scale = Vector2(0.5, 0.5)
+
+[node name="ColorRect3" type="ColorRect" parent="prespawned lanes/Lane5"]
+offset_left = 52.0
+offset_top = -66.0
+offset_right = 100.0
+offset_bottom = -38.0
+color = Color(0.6, 0.6, 0.6, 1)
+
+[node name="Lane6" parent="prespawned lanes" instance=ExtResource("3_lnu2h")]
+position = Vector2(216, 0)
+scale = Vector2(0.5, 0.5)
+
+[node name="ColorRect3" type="ColorRect" parent="prespawned lanes/Lane6"]
+offset_left = 52.0
+offset_top = -66.0
+offset_right = 100.0
+offset_bottom = -38.0
+color = Color(0.6, 0.6, 0.6, 1)
 
 [node name="UI elements" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
@@ -57,20 +118,16 @@ position = Vector2(0, -2)
 zoom = Vector2(10, 10)
 
 [node name="Spawner" parent="Bike" instance=ExtResource("2_iywne")]
-position = Vector2(-60, 1)
+position = Vector2(-59.6491, 1.16959)
 
 [node name="Spawner2" parent="Bike" instance=ExtResource("2_iywne")]
-position = Vector2(-60, -16)
+position = Vector2(-59.8246, -11.0526)
 
 [node name="Spawner3" parent="Bike" instance=ExtResource("2_iywne")]
-position = Vector2(-60, 16)
+position = Vector2(-59.6491, 14.0351)
 
 [node name="Game Manager" type="Node" parent="."]
 script = ExtResource("2_yqjtg")
-
-[node name="Lane" parent="." instance=ExtResource("3_lnu2h")]
-position = Vector2(2, 2)
-scale = Vector2(0.5, 0.503103)
 
 [node name="World Boundaries" type="Node" parent="."]
 
@@ -78,7 +135,7 @@ scale = Vector2(0.5, 0.503103)
 position = Vector2(1, 155)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World Boundaries/Bottom Boundary"]
-position = Vector2(2, -130)
+position = Vector2(3, -136)
 shape = SubResource("WorldBoundaryShape2D_lnu2h")
 
 [node name="Top Boundary" type="StaticBody2D" parent="World Boundaries"]
@@ -86,7 +143,7 @@ position = Vector2(1, -225)
 rotation = -3.14159
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World Boundaries/Top Boundary"]
-position = Vector2(-26.0005, -203)
+position = Vector2(-26.0005, -205)
 shape = SubResource("WorldBoundaryShape2D_lnu2h")
 
 [node name="Left Boundary" type="StaticBody2D" parent="World Boundaries"]
@@ -94,11 +151,7 @@ position = Vector2(-178, -5)
 rotation = 1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World Boundaries/Left Boundary"]
-position = Vector2(2, -130)
+position = Vector2(3.99953, -130)
 shape = SubResource("WorldBoundaryShape2D_lnu2h")
-
-[node name="Lane2" parent="." instance=ExtResource("3_lnu2h")]
-position = Vector2(-126, 2)
-scale = Vector2(0.5, 0.5)
 
 [connection signal="timeout" from="UI elements/time label/Timer" to="Game Manager" method="_on_timer_timeout"]

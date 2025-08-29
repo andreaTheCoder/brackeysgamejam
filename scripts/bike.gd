@@ -5,7 +5,7 @@ const X_BACKWARDS_SLOW = .5
 const DECEL_SPEED = 5
 const BACKWARDS_MAX_SPEED = -200# rate at which you decelerate when spacebar is let go
 const X_ACCEL = 100.0 # X direction acceleration
-const MAX_SPEED = 400
+const MAX_SPEED = 350
 const X_DECEL = 100 # rate at which you decelerate when spacebar is let go
 # y deceleration speed
 const Y_DECEL = 0.5
@@ -20,6 +20,7 @@ func _physics_process(delta: float) -> void:
 	# Handle forward movement.
 	if Input.is_action_pressed("forward") and not stunned:
 		velocity.x = clamp(velocity.x + X_ACCEL * delta, BACKWARDS_MAX_SPEED, MAX_SPEED) # Add the acceleration to the speed, but only until max speed
+		print(velocity.x)
 	elif Input.is_action_pressed("backward") and not stunned:
 		velocity.x = clamp(velocity.x - X_ACCEL * X_BACKWARDS_SLOW * delta, BACKWARDS_MAX_SPEED, MAX_SPEED)
 		if velocity.x > 0: # minor movement fix

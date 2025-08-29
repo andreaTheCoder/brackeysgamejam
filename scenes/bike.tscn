@@ -22,6 +22,7 @@ animations = [{
 }]
 
 [node name="bike" type="CharacterBody2D"]
+scale = Vector2(0.855, 0.855)
 collision_layer = 2
 script = ExtResource("1_oy3wg")
 

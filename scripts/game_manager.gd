@@ -41,10 +41,7 @@ func start_delivery(distance: int) -> void:
 func _on_timer_timeout() -> void:
 	print("No tips! You ran out of time.")
 	timer.stop()
-	# Tried to make the timer turn red when out of time,
-	# but can't make it turn back to black in the target_house script,
-	# so I commented out the below line 
-	#time_label.add_theme_color_override("font_color", "red") 
+	time_label.add_theme_color_override("font_color", "red") 
 	
 
 func complete_delivery():
@@ -52,6 +49,8 @@ func complete_delivery():
 	balance += (base_payment + time_remaining * difficulty)
 	Global.coins += balance
 	money.text = "$" + str(Global.coins)
+	time_label.add_theme_color_override("font_color", "black") 
+
 
 # Reset button
 func checkRespawn():

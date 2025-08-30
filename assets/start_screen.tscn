@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://bv8437dil3uww"]
 
-[ext_resource type="Script" uid="uid://bfvddbfj7ixi2" path="res://start_screen.gd" id="1_he1sj"]
-[ext_resource type="FontFile" uid="uid://dwugsqctkdvhw" path="res://assets/bad-unicorn-font/BadUnicornDemoRegular-BVWx.ttf" id="2_o7i0r"]
+[ext_resource type="Script" uid="uid://bfvddbfj7ixi2" path="res://start_screen.gd" id="1_lpg12"]
+[ext_resource type="FontFile" uid="uid://dy7hhgxec3873" path="res://assets/Gaegu-Bold.ttf" id="2_knx1u"]
 
 [node name="start_screen" type="Node2D"]
-script = ExtResource("1_he1sj")
+script = ExtResource("1_lpg12")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 position = Vector2(115.109, -271.267)
@@ -27,7 +27,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_o7i0r")
+theme_override_fonts/font = ExtResource("2_knx1u")
 theme_override_font_sizes/font_size = 120
 text = "Biscuit Delivery
 Simulator"
@@ -46,6 +46,6 @@ offset_left = 349.0
 offset_top = 364.0
 offset_right = 691.0
 offset_bottom = 491.0
-theme_override_fonts/font = ExtResource("2_o7i0r")
+theme_override_fonts/font = ExtResource("2_knx1u")
 theme_override_font_sizes/font_size = 75
 text = "Start Game!"

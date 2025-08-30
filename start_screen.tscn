@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bfned7ytusrwp"]
 
 [ext_resource type="Script" uid="uid://bfvddbfj7ixi2" path="res://start_screen.gd" id="1_pevhg"]
-[ext_resource type="FontFile" path="res://assets/Gaegu-Bold.ttf" id="2_afy8x"]
+[ext_resource type="FontFile" uid="uid://dy7hhgxec3873" path="res://assets/Gaegu-Bold.ttf" id="2_afy8x"]
 
 [node name="start_screen" type="Node2D"]
 script = ExtResource("1_pevhg")

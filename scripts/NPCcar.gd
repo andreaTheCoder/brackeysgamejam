@@ -1,4 +1,4 @@
-extends Area2D
+extends RigidBody2D
 var front
 const SPEED = 75
 var direction = -1

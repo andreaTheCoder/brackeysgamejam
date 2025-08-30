@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://ttc4ydh2mtbv"]
+[gd_scene load_steps=2 format=3 uid="uid://ttc4ydh2mtbv"]
 
 [ext_resource type="Script" uid="uid://bpbn0bg6d3e1q" path="res://scripts/end_screen.gd" id="1_6e1uj"]
-[ext_resource type="FontFile" uid="uid://dwugsqctkdvhw" path="res://assets/bad-unicorn-font/BadUnicornDemoRegular-BVWx.ttf" id="2_jc7ji"]
 
 [node name="end_screen" type="Node2D"]
 script = ExtResource("1_6e1uj")
@@ -28,7 +27,6 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_jc7ji")
 theme_override_font_sizes/font_size = 110
 text = "Thank you for the 
 biscuit delivery!"
@@ -43,10 +41,9 @@ offset_bottom = 40.0
 
 [node name="Button" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 372.0
-offset_top = 445.0
-offset_right = 732.0
-offset_bottom = 572.0
-theme_override_fonts/font = ExtResource("2_jc7ji")
+offset_left = 269.0
+offset_top = 435.0
+offset_right = 792.0
+offset_bottom = 579.0
 theme_override_font_sizes/font_size = 75
 text = "Next Delivery!"

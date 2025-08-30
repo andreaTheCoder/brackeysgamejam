@@ -1,5 +1,6 @@
 extends Node
 
+const START_SCREEN = preload("res://scenes/start_screen.tscn")
 @onready var timer: Timer = $"../UI elements/time label/Timer"
 @onready var time_label: Label = $"../UI elements/time label"
 @onready var money: Label = $"../UI elements/money"

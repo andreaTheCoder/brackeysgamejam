@@ -42,10 +42,10 @@ offset_bottom = 40.0
 
 [node name="Button" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 559.0
-offset_top = 577.0
-offset_right = 901.0
-offset_bottom = 704.0
+offset_left = 349.0
+offset_top = 364.0
+offset_right = 691.0
+offset_bottom = 491.0
 theme_override_fonts/font = ExtResource("2_o7i0r")
 theme_override_font_sizes/font_size = 75
 text = "Start Game!"

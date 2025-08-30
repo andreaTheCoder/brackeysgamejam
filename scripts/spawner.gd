@@ -2,12 +2,13 @@ extends Node2D
 
 @export var front = true
 @onready var spawn_timer: Timer = $SpawnTimer
+@onready var bike: CharacterBody2D = $"../../"
 
 var car_template = preload("res://scenes/NPCcar.tscn")
 
 # Set possible min/max wait times for cars to spawn
-const minSpawnTime: float = 4
-const maxSpawnTime: float = 10
+var minSpawnTime: float = 4
+var maxSpawnTime: float = 10
 const STARTING_BEHIND_X = 100 # x that the car spawns behind the player
 
 func _ready() -> void:
@@ -18,6 +19,21 @@ func _ready() -> void:
 	else:
 		spawn_timer.wait_time = randf_range(minSpawnTime, maxSpawnTime)
 	spawn_timer.start()
+
+func _process(delta: float) -> void:
+	if bike.velocity.x < 25:
+		minSpawnTime = 15
+		maxSpawnTime = 25
+	elif bike.velocity.x < 75:
+		minSpawnTime = 6
+		maxSpawnTime = 10
+	elif bike.velocity.x < 200:
+		minSpawnTime = 3
+		maxSpawnTime = 6
+	else:
+		minSpawnTime = 1
+		maxSpawnTime = 3
+	
 
 # Instaniates car at spawner node
 func spawn_car():

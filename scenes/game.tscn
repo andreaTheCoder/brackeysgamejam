@@ -115,8 +115,6 @@ theme_override_font_sizes/font_size = 56
 text = "Deliveries Remaining: 3"
 
 [node name="Bike" parent="." instance=ExtResource("1_uwrxv")]
-z_index = 3
-position = Vector2(0, 2)
 
 [node name="Camera2D" type="Camera2D" parent="Bike"]
 position = Vector2(0, -2)

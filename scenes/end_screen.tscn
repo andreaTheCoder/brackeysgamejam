@@ -19,17 +19,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -1466.0
-offset_top = -191.0
-offset_right = 1474.0
-offset_bottom = 415.0
+offset_left = -1464.0
+offset_top = -203.0
+offset_right = 1476.0
+offset_bottom = 403.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 110
-text = "Thank you for the 
-biscuit delivery!"
+text = "Deliveries complete!"
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -41,9 +40,10 @@ offset_bottom = 40.0
 
 [node name="Button" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 269.0
-offset_top = 435.0
-offset_right = 792.0
-offset_bottom = 579.0
+offset_left = 278.0
+offset_top = 363.0
+offset_right = 801.0
+offset_bottom = 507.0
+rotation = -0.00230739
 theme_override_font_sizes/font_size = 75
-text = "Next Delivery!"
+text = "Next Day"

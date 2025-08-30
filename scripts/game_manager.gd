@@ -10,17 +10,20 @@ var difficulty = 0.7 # smaller number = harder because less time
 const base_payment = 5
 var balance = 0
 var time_remaining
-var current_house_x = 250
+var current_house_x = 124
 var delivery_count = 1
+const HOUSE_RANGE_MIN = 2
+const HOUSE_RANGE_MAX = 10
 
 
 func _ready() -> void:
 	start_delivery(house_distance)
 	for i in range(Global.DELIVERIES_PER_DAY):
 		print("house clone created")
+		current_house_x += 144*randi_range(HOUSE_RANGE_MIN, HOUSE_RANGE_MAX)# distance between houses
 		var instance = target_house_prefab.instantiate()
-		instance.position = Vector2(current_house_x, -50)
-		current_house_x += 250
+		instance.position.x = current_house_x
+		instance.position.y = -50
 		get_parent().call_deferred("add_child", instance)
 func _process(_delta: float) -> void:
 	checkRespawn()

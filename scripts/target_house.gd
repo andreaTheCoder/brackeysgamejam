@@ -2,13 +2,13 @@ extends Area2D
 
 @onready var game_manager = $"../Game Manager"
 @onready var deliveries_left: Label = $"../UI elements/deliveries left"
-@onready var house_sprite: Sprite2D = $House
+@onready var house_sprite: Sprite2D = $arrow
 @onready var delivery_label = get_tree().get_root().get_node("game").get_node("%UI elements/delivery label")
 @onready var timer: Timer = $"../UI elements/time label/Timer"
 
 const BIKE = preload("res://scenes/bike.tscn")
-const GREEN_HOUSE_IMG = preload("res://assets/Green house.png")
-const HOUSE_IMG = preload("res://assets/house.jpg")
+const BLUE_ARROW = preload("res://assets/handmade/blue_arrow.webp")
+const HOUSE_IMG = preload("res://assets/handmade/white_arrow.webp")
 var at_house = false
 var game_over_scene:PackedScene = load("res://scenes/end_screen.tscn")
 var delivered = false
@@ -33,7 +33,7 @@ func _process(_delta: float) -> void:
 
 func _on_body_entered(_body: Node2D) -> void:
 		at_house = true
-		house_sprite.texture = GREEN_HOUSE_IMG
+		house_sprite.texture = BLUE_ARROW
 		delivery_label.visible = true
 
 func _on_body_exited(_body: Node2D) -> void:

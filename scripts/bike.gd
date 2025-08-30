@@ -5,7 +5,7 @@ const X_BACKWARDS_SLOW = .5
 const DECEL_SPEED = 5
 const BACKWARDS_MAX_SPEED = -200# rate at which you decelerate when spacebar is let go
 const X_ACCEL = 100.0 # X direction acceleration
-const MAX_SPEED = 350
+const MAX_SPEED = 275
 const X_DECEL = 100 # rate at which you decelerate when spacebar is let go
 # y deceleration speed
 const Y_DECEL = 0.5

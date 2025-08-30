@@ -10,10 +10,9 @@ const minSpawnTime: float = 4
 const maxSpawnTime: float = 10
 const STARTING_BEHIND_X = 100 # x that the car spawns behind the player
 
-
 func _ready() -> void:
-	spawn_car()
-	
+	var my_car = spawn_car()
+	my_car.position.x = position.x -  randf_range(300, 100)
 	if front:
 		spawn_timer.wait_time = randf_range(minSpawnTime, maxSpawnTime*.5)
 	else:

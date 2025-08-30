@@ -14,8 +14,21 @@ const Y_DECEL = 0.5
 var stunned = false
 const STUN_DURATION = 1.4
 
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var stun_timer: Timer = $"Stun Timer"
 
+func _process(delta: float) -> void:
+	if Input.is_action_pressed("up") and velocity.y > 0:
+		animated_sprite_2d.play("default")
+	elif Input.is_action_pressed("up"):
+		animated_sprite_2d.play("turn_up")
+	elif Input.is_action_pressed("down"):
+		animated_sprite_2d.play("turn_down")
+	elif velocity.x == 0:
+		animated_sprite_2d.play("idle")
+	else:
+		animated_sprite_2d.play("default")
+		
 func _physics_process(delta: float) -> void:
 	_handle_movement(delta)
 	move_and_slide()

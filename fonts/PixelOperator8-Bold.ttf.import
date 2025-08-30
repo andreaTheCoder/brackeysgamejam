@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://dwugsqctkdvhw"
-path="res://.godot/imported/BadUnicornDemoRegular-BVWx.ttf-c166e7d7379611494a9794a0619823ca.fontdata"
+uid="uid://cly85sjrqbosg"
+path="res://.godot/imported/PixelOperator8-Bold.ttf-9816dd625e887c8fd6e5634edb7d64db.fontdata"
 
 [deps]
 
-source_file="res://assets/bad-unicorn-font/BadUnicornDemoRegular-BVWx.ttf"
-dest_files=["res://.godot/imported/BadUnicornDemoRegular-BVWx.ttf-c166e7d7379611494a9794a0619823ca.fontdata"]
+source_file="res://fonts/PixelOperator8-Bold.ttf"
+dest_files=["res://.godot/imported/PixelOperator8-Bold.ttf-9816dd625e887c8fd6e5634edb7d64db.fontdata"]
 
 [params]
 

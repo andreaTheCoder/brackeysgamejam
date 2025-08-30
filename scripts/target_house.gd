@@ -2,7 +2,7 @@ extends Area2D
 
 @onready var game_manager = $"../Game Manager"
 @onready var deliveries_left: Label = $"../UI elements/deliveries left"
-@onready var house_sprite: Sprite2D = $House
+@onready var house_sprite: Sprite2D = $arrow
 @onready var delivery_label = get_tree().get_root().get_node("game").get_node("%UI elements/delivery label")
 @onready var timer: Timer = $"../UI elements/time label/Timer"
 

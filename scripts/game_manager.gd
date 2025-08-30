@@ -20,8 +20,8 @@ const HOUSE_RANGE_MAX = 10
 func _ready() -> void:
 	start_delivery(house_distance)
 	for i in range(Global.DELIVERIES_PER_DAY):
-		print("house clone created")
-		current_house_x += 144*randi_range(HOUSE_RANGE_MIN, HOUSE_RANGE_MAX)# distance between houses
+		#print("house clone created")
+		current_house_x += 144*randi_range(HOUSE_RANGE_MIN, HOUSE_RANGE_MAX)# Distance between houses
 		var instance = target_house_prefab.instantiate()
 		instance.position.x = current_house_x
 		instance.position.y = -50
@@ -31,23 +31,27 @@ func _process(_delta: float) -> void:
 	time_remaining = int(ceil(timer.time_left))
 	time_label.text = "Tip Timer: " + str(time_remaining)
 
-# Run when you click a start button
+# Run when you click the start button
 func start_delivery(distance: int) -> void:
-	delivery_time = distance * difficulty
-	Global.coins = balance
-	money.text = "$" + str(Global.coins)
-	timer.wait_time = int(delivery_time)
+	delivery_time = distance * difficulty # Difficulty levels have not yet been implemented
+	money.text = "$" + str(Global.coins) # Show money on screen
+	timer.wait_time = int(delivery_time) # Set the amount of time you get per house
 	timer.start()
 	print("delivery started")
 
 func _on_timer_timeout() -> void:
-	print("Ran out of time!")
+	print("No tips! You ran out of time.")
 	timer.stop()
+	# Tried to make the timer turn red when out of time,
+	# but can't make it turn back to black in the target_house script,
+	# so I commented out the below line 
+	#time_label.add_theme_color_override("font_color", "red") 
+	
 
 func complete_delivery():
 	timer.stop()
 	balance += (base_payment + time_remaining * difficulty)
-	Global.coins = balance
+	Global.coins += balance
 	money.text = "$" + str(Global.coins)
 
 # Reset button

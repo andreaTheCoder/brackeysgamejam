@@ -25,6 +25,10 @@ window/size/viewport_width=1100
 window/size/viewport_height=680
 window/stretch/mode="canvas_items"
 
+[gui]
+
+theme/custom_font="uid://dy7hhgxec3873"
+
 [input]
 
 forward={

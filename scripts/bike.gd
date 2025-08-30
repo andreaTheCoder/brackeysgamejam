@@ -5,7 +5,7 @@ const X_BACKWARDS_SLOW = .5
 const DECEL_SPEED = 5
 const BACKWARDS_MAX_SPEED = -200# rate at which you decelerate when spacebar is let go
 const X_ACCEL = 100.0 # X direction acceleration
-const MAX_SPEED = 350
+const MAX_SPEED = 300
 const X_DECEL = 100 # rate at which you decelerate when spacebar is let go
 # y deceleration speed
 const Y_DECEL = 0.5
@@ -33,6 +33,12 @@ func _process(delta: float) -> void:
 		
 func _physics_process(delta: float) -> void:
 	_handle_movement(delta)
+	if Input.is_action_pressed("forward"):
+		animated_sprite_2d.play("default")
+	elif Input.is_action_pressed("up"):
+		velocity.y = clamp(velocity.y - X_ACCEL * delta, BACKWARDS_MAX_SPEED, MAX_SPEED) # Add the acceleration to the speed, but only until max speed
+	else:
+		velocity.y = clamp(velocity.y + X_ACCEL * delta, BACKWARDS_MAX_SPEED, MAX_SPEED) # Add the acceleration to the speed, but only until max speed
 	move_and_slide()
 	
 

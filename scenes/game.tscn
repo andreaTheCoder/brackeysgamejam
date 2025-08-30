@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dx4alm7spt1cb"]
 
-[ext_resource type="PackedScene" uid="uid://b2nldleqd7l8" path="res://scenes/bike.tscn" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://ctxp11s78lnjx" path="res://scenes/bike.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://c8a2pywu578h" path="res://scenes/spawner.tscn" id="2_iywne"]
 [ext_resource type="FontFile" uid="uid://dy7hhgxec3873" path="res://assets/Gaegu-Bold.ttf" id="2_u5sy4"]
 [ext_resource type="Script" uid="uid://ve3kpygen1ju" path="res://scripts/game_manager.gd" id="2_yqjtg"]

@@ -2,7 +2,7 @@ extends Node2D
 
 const GAME = preload("res://scenes/game.tscn")
 var game_scene:PackedScene = load("res://scenes/game.tscn")
-@onready var button: Button = $Control/Button
+@onready var button: TextureButton = $Control/TextureButton
 
 
 # Called when the node enters the scene tree for the first time.

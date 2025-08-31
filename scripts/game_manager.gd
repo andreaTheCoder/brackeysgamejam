@@ -6,7 +6,7 @@ const START_SCREEN = preload("res://scenes/start_screen.tscn")
 const target_house_prefab = preload("res://scenes/target_house.tscn")
 var delivery_time = 0
 var house_distance = 10
-var difficulty = 0.7 # smaller number = harder because less time
+var difficulty = 1 # smaller number = harder because less time
 const base_payment = 5
 var balance = 0
 var time_remaining

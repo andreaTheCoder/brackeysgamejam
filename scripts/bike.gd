@@ -17,7 +17,7 @@ const STUN_DURATION = 1.4
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var stun_timer: Timer = $"Stun Timer"
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_pressed("up") and velocity.y > 0:
 		animated_sprite_2d.play("default")
 	elif Input.is_action_pressed("down") and velocity.y < 0:

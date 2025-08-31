@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bedgqqr02ks5w" path="res://assets/handmade/white_arrow.webp" id="2_nx08e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4hs0r"]
-size = Vector2(29.5, 77.25)
+size = Vector2(93, 118.25)
 
 [node name="target_house" type="Area2D"]
 z_index = 5
@@ -20,7 +20,7 @@ texture = ExtResource("2_nx08e")
 offset = Vector2(0.000137329, -1234.07)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 18.375)
+position = Vector2(0.5, 38.875)
 shape = SubResource("RectangleShape2D_4hs0r")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -11,7 +11,7 @@ script = ExtResource("1_he1sj")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 z_index = 10
-position = Vector2(763.195, 433.01)
+position = Vector2(754.195, 399.01)
 scale = Vector2(0.455, 0.455)
 texture = ExtResource("3_r2jwc")
 
@@ -22,10 +22,10 @@ anchors_preset = 0
 [node name="play" type="TextureButton" parent="Control"]
 z_index = 1
 layout_mode = 0
-offset_left = 593.0
-offset_top = 350.0
-offset_right = 2251.0
-offset_bottom = 1594.0
+offset_left = 584.0
+offset_top = 316.0
+offset_right = 2242.0
+offset_bottom = 1560.0
 scale = Vector2(0.21, 0.125)
 texture_normal = ExtResource("3_r2jwc")
 ignore_texture_size = true
@@ -34,5 +34,14 @@ ignore_texture_size = true
 position = Vector2(536, 358)
 scale = Vector2(0.641819, 0.593845)
 texture = ExtResource("3_he1sj")
+
+[node name="credits" type="Label" parent="."]
+offset_left = 28.0
+offset_top = 638.0
+offset_right = 543.0
+offset_bottom = 671.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Credits: super duper potato, human, Player_name, penguin"
 
 [connection signal="pressed" from="Control/play" to="." method="_on_play_pressed"]

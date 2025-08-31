@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dx4alm7spt1cb"]
+[gd_scene load_steps=10 format=3 uid="uid://dx4alm7spt1cb"]
 
 [ext_resource type="PackedScene" uid="uid://b2nldleqd7l8" path="res://scenes/bike.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://c8a2pywu578h" path="res://scenes/spawner.tscn" id="2_iywne"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://od0hx2lbegjy" path="res://scenes/chunk.tscn" id="3_lnu2h"]
 [ext_resource type="Texture2D" uid="uid://dqn8l6bnxachn" path="res://assets/handmade/clonk.webp" id="3_p57ef"]
 [ext_resource type="Texture2D" uid="uid://1qhifxrgbmx8" path="res://assets/handmade/money.webp" id="4_u5sy4"]
+[ext_resource type="Texture2D" uid="uid://dmh3r2vppelq0" path="res://assets/handmade/bisuit outline.png" id="5_gee14"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lnu2h"]
 distance = 0.999941
@@ -111,13 +112,14 @@ text = "PRESS SHIFT TO DELIVER!!"
 metadata/_edit_group_ = true
 
 [node name="deliveries left" type="Label" parent="UI elements"]
-offset_top = 112.0
-offset_right = 405.0
-offset_bottom = 149.0
+offset_left = 175.0
+offset_top = 132.0
+offset_right = 742.0
+offset_bottom = 189.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_u5sy4")
 theme_override_font_sizes/font_size = 56
-text = "Deliveries Remaining: 3"
+text = "3"
 
 [node name="timer icon" type="Sprite2D" parent="UI elements"]
 position = Vector2(65, 65)
@@ -129,6 +131,11 @@ position = Vector2(853, 54)
 scale = Vector2(0.06, 0.06)
 texture = ExtResource("4_u5sy4")
 
+[node name="UntitledArtwork" type="Sprite2D" parent="UI elements"]
+position = Vector2(72, 136)
+scale = Vector2(0.0855324, 0.0964892)
+texture = ExtResource("5_gee14")
+
 [node name="Bike" parent="." instance=ExtResource("1_uwrxv")]
 
 [node name="Camera2D" type="Camera2D" parent="Bike"]
@@ -136,6 +143,7 @@ position = Vector2(0, -2)
 zoom = Vector2(7.5, 7.5)
 
 [node name="back" type="Node2D" parent="Bike"]
+position = Vector2(12.8655, 0)
 
 [node name="Spawner" parent="Bike/back" instance=ExtResource("2_iywne")]
 position = Vector2(-59.6491, 1.16959)
@@ -150,7 +158,7 @@ position = Vector2(-59.6491, 14.0351)
 front = false
 
 [node name="front" type="Node2D" parent="Bike"]
-position = Vector2(160.234, 0)
+position = Vector2(70.1754, 0)
 
 [node name="Spawner" parent="Bike/front" instance=ExtResource("2_iywne")]
 position = Vector2(-59.6491, 1.16959)

@@ -1,36 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://ttc4ydh2mtbv"]
+[gd_scene load_steps=4 format=3 uid="uid://ttc4ydh2mtbv"]
 
 [ext_resource type="Script" uid="uid://bpbn0bg6d3e1q" path="res://scripts/end_screen.gd" id="1_6e1uj"]
+[ext_resource type="Texture2D" uid="uid://c8rnt8e15hfh6" path="res://assets/handmade/deliveries complete.webp" id="2_6e1uj"]
+[ext_resource type="Texture2D" uid="uid://dvi6guv2t6ppd" path="res://assets/handmade/next day.webp" id="2_87vmq"]
 
 [node name="end_screen" type="Node2D"]
 script = ExtResource("1_6e1uj")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -29.0
-offset_top = -16.0
-offset_right = 1526.0
-offset_bottom = 1025.0
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Label" type="Label" parent="CanvasLayer"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -1464.0
-offset_top = -203.0
-offset_right = 1476.0
-offset_bottom = 403.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 110
-text = "Deliveries complete!"
-horizontal_alignment = 1
-autowrap_mode = 2
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -38,12 +13,17 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Button" type="Button" parent="Control"]
+[node name="TextureButton" type="TextureButton" parent="Control"]
+z_index = 1
 layout_mode = 0
-offset_left = 278.0
-offset_top = 363.0
-offset_right = 801.0
-offset_bottom = 507.0
-rotation = -0.00230739
-theme_override_font_sizes/font_size = 75
-text = "Next Day"
+offset_left = 181.0
+offset_top = 254.0
+offset_right = 1935.0
+offset_bottom = 1570.0
+scale = Vector2(0.42, 0.42)
+texture_normal = ExtResource("2_87vmq")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(548, 415)
+scale = Vector2(0.767674, 0.778875)
+texture = ExtResource("2_6e1uj")

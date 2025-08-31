@@ -7,7 +7,7 @@ extends Node2D
 var car_template = preload("res://scenes/NPCcar.tscn")
 
 # Set possible min/max wait times for cars to spawn
-var minSpawnTime: float = 4
+var minSpawnTime: float = 6
 var maxSpawnTime: float = 10
 const STARTING_BEHIND_X = 100 # x that the car spawns behind the player
 
@@ -20,7 +20,7 @@ func _ready() -> void:
 		spawn_timer.wait_time = randf_range(minSpawnTime, maxSpawnTime)
 	spawn_timer.start()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if bike.velocity.x < 25:
 		minSpawnTime = 15
 		maxSpawnTime = 25

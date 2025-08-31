@@ -25,7 +25,7 @@ func _process(_delta: float) -> void:
 		house_sprite.texture = GREEN_ARROW
 		
 		print ("delivery count ", game_manager.delivery_count)
-		deliveries_left.text = "Deliveries Remaining: " + str(Global.DELIVERIES_PER_DAY - game_manager.delivery_count) # Set the on-screen text
+		deliveries_left.text = str(Global.DELIVERIES_PER_DAY - game_manager.delivery_count) # Set the on-screen text
 		if game_manager.delivery_count == Global.DELIVERIES_PER_DAY:
 			# If you have completed your deliveries for the day, move on to the next day.
 			get_tree().change_scene_to_packed(game_over_scene)

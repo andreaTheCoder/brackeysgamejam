@@ -28,7 +28,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	checkRespawn()
 	time_remaining = int(ceil(timer.time_left))
-	time_label.text = "Tip Timer: " + str(time_remaining)
+	time_label.text = str(time_remaining)
 
 # Run when you click the start button
 func start_delivery(distance: int) -> void:

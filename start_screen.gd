@@ -7,14 +7,10 @@ var game_scene:PackedScene = load("res://scenes/game.tscn")
 func _ready() -> void:
 	print("hello")
 func _process(_delta: float) -> void:
-	#if Input.is_action_pressed("button"):
-	#	get_tree().change_scene_to_packed(game_scene)
-	pass
+	if Input.is_action_pressed("button"):
+		get_tree().change_scene_to_packed(game_scene)
 	
 	
 func _on_play_pressed() -> void:
 	print("play")
 	get_tree().change_scene_to_packed(game_scene)
-
-func _on_how_to_play_pressed() -> void:
-	print("tutorial")

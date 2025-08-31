@@ -11,8 +11,10 @@ func _ready() -> void:
 
 func _button_pressed():
 	print("Next delivery!")
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	get_tree().change_scene_to_packed(game_scene)
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("button"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 		get_tree().change_scene_to_packed(game_scene)

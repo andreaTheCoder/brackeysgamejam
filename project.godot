@@ -24,6 +24,8 @@ Global="*res://scripts/global.gd"
 window/size/viewport_width=1100
 window/size/viewport_height=680
 window/stretch/mode="canvas_items"
+mouse_cursor/custom_image="uid://diph05k6eitnd"
+mouse_cursor/tooltip_position_offset=Vector2(0, 0)
 
 [gui]
 

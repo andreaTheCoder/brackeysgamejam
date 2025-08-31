@@ -28,6 +28,7 @@ func _process(_delta: float) -> void:
 		deliveries_left.text = str(Global.DELIVERIES_PER_DAY - game_manager.delivery_count) # Set the on-screen text
 		if game_manager.delivery_count == Global.DELIVERIES_PER_DAY:
 			# If you have completed your deliveries for the day, move on to the next day.
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 			get_tree().change_scene_to_packed(game_over_scene)
 			game_manager.delivery_count = 0
 		else:

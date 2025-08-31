@@ -26,7 +26,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -34,7 +34,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -45,7 +45,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"turn_down",
-"speed": 5.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -56,7 +56,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"turn_up",
-"speed": 5.0
+"speed": 12.0
 }]
 
 [node name="bike" type="CharacterBody2D"]
@@ -76,6 +76,7 @@ shape = SubResource("RectangleShape2D_b0jew")
 rotation = 1.5708
 scale = Vector2(0.015, 0.015)
 sprite_frames = SubResource("SpriteFrames_fdhfo")
+animation = &"turn_up"
 autoplay = "default"
 
 [connection signal="timeout" from="Stun Timer" to="." method="_on_stun_timer_timeout"]

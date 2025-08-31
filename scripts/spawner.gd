@@ -15,7 +15,7 @@ func _ready() -> void:
 	var my_car = spawn_car()
 	my_car.position.x = position.x -  randf_range(300, 100)
 	if front:
-		spawn_timer.wait_time = randf_range(minSpawnTime, maxSpawnTime*.5)
+		spawn_timer.wait_time = randf_range(minSpawnTime*.1, maxSpawnTime*.5)
 	else:
 		spawn_timer.wait_time = randf_range(minSpawnTime, maxSpawnTime)
 	spawn_timer.start()
@@ -39,7 +39,7 @@ func _process(_delta: float) -> void:
 func spawn_car():
 	var my_car = car_template.instantiate()
 	if front:
-		my_car.position.x = get_parent().get_parent().position.x + STARTING_BEHIND_X
+		my_car.position.x = get_parent().get_parent().position.x + 85
 	else:
 		my_car.position.x = get_parent().get_parent().position.x - STARTING_BEHIND_X
 	my_car.position.y = position.y

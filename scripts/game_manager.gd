@@ -33,7 +33,7 @@ func _process(_delta: float) -> void:
 # Run when you click the start button
 func start_delivery(distance: int) -> void:
 	delivery_time = distance * difficulty # Difficulty levels have not yet been implemented
-	money.text = "$" + str(Global.coins) # Show money on screen
+	money.text = str(Global.coins) # Show money on screen
 	timer.wait_time = int(delivery_time) # Set the amount of time you get per house
 	timer.start()
 	print("delivery started")

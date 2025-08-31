@@ -32,8 +32,6 @@ script = ExtResource("1_oy3wg")
 position = Vector2(1.5, -1)
 shape = SubResource("RectangleShape2D_b0jew")
 
-[node name="Stun Timer" type="Timer" parent="."]
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 16
 rotation = 1.5708
@@ -42,7 +40,10 @@ sprite_frames = SubResource("SpriteFrames_fdhfo")
 autoplay = "default"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+<<<<<<< Updated upstream
 stream = ExtResource("4_fdhfo")
 autoplay = true
 
 [connection signal="timeout" from="Stun Timer" to="." method="_on_stun_timer_timeout"]
+=======
+>>>>>>> Stashed changes

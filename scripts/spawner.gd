@@ -20,7 +20,7 @@ func _ready() -> void:
 		spawn_timer.wait_time = randf_range(minSpawnTime, maxSpawnTime)
 	spawn_timer.start()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if bike.velocity.x < 25:
 		minSpawnTime = 15
 		maxSpawnTime = 25

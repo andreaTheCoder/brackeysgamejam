@@ -10,12 +10,11 @@ const X_DECEL = 100 # rate at which you decelerate when spacebar is let go
 # y deceleration speed
 const Y_DECEL = 0.5
 
-# if car is stunned stunned = 0, meaning that all acceleration is null
-var stunned = false
-const STUN_DURATION = 1.4
-
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+<<<<<<< Updated upstream
 @onready var stun_timer: Timer = $"Stun Timer"
+=======
+>>>>>>> Stashed changes
 @onready var sfx: AudioStreamPlayer = $AudioStreamPlayer
 const down1 = preload("res://assets/sounds/HuntYouDown.mp3")
 const idle1 = preload("res://assets/sounds/Idle.mp3")
@@ -23,10 +22,14 @@ const idle2 = preload("res://assets/sounds/Idol.mp3")
 const up1 = preload("res://assets/sounds/PowerUp.mp3")
 const up2 = preload("res://assets/sounds/RevUp.mp3")
 var sfxes = [down1, idle1, idle2, up1, up2]
+<<<<<<< Updated upstream
 
 
 
 func _process(delta: float) -> void:
+=======
+func _process(_delta: float) -> void:
+>>>>>>> Stashed changes
 	if Input.is_action_pressed("up") and velocity.y > 0:
 		animated_sprite_2d.play("default")
 	elif Input.is_action_pressed("down") and velocity.y < 0:
@@ -37,6 +40,7 @@ func _process(delta: float) -> void:
 		animated_sprite_2d.play("turn_down")
 	else:
 		animated_sprite_2d.play("default")
+<<<<<<< Updated upstream
 	
 func _physics_process(delta: float) -> void:
 	_handle_movement(delta)
@@ -50,26 +54,34 @@ func stun():
 func _on_stun_timer_timeout() -> void:
 	stunned = false
 	
+=======
+	_sfx_detector()
+func _physics_process(delta: float) -> void:
+	_handle_movement(delta)
+	move_and_slide()
+
+>>>>>>> Stashed changes
 func _handle_movement(delta):
 	# Handle forward movement.
-	if Input.is_action_pressed("forward") and not stunned:
+	if Input.is_action_pressed("forward"):
 		velocity.x = clamp(velocity.x + X_ACCEL * delta, BACKWARDS_MAX_SPEED, MAX_SPEED) # Add the acceleration to the speed, but only until max speed
-	elif Input.is_action_pressed("backward") and not stunned:
+	elif Input.is_action_pressed("backward"):
 		velocity.x = clamp(velocity.x - X_ACCEL * X_BACKWARDS_SLOW * delta, BACKWARDS_MAX_SPEED, MAX_SPEED)
 		if velocity.x > 0: # minor movement fix
 			velocity.x = move_toward(velocity.x, 0, DECEL_SPEED) 
 	else:
 		velocity.x = move_toward(velocity.x, 0, DECEL_SPEED)
 	# Handle up/down movement
-	if Input.is_action_pressed("up") and not stunned:
+	if Input.is_action_pressed("up"):
 		velocity.y = clamp(velocity.y - X_ACCEL * delta, BACKWARDS_MAX_SPEED, MAX_SPEED) # Add the acceleration to the speed, but only until max speed
-	elif Input.is_action_pressed("down") and not stunned:
+	elif Input.is_action_pressed("down"):
 		velocity.y = clamp(velocity.y + X_ACCEL * delta, BACKWARDS_MAX_SPEED, MAX_SPEED) # Add the acceleration to the speed, but only until max speed
 	else:
 		velocity.y = move_toward(velocity.y, 0, Y_DECEL) # moves velocity towards 0, slowing it down every from by 10 when not pressing up or down
 	
 
 func _sfx_detector():
+<<<<<<< Updated upstream
 	if Input.is_action_just_pressed("forward") and not stunned:
 		sfx.stream = sfxes[randi_range(3, 4)]
 		sfx.pitch_scale = randf_range(0.75, 1.25)
@@ -86,6 +98,24 @@ func _sfx_detector():
 			sfx.volume_db = 0
 			sfx.stream = sfxes[randi_range(3, 4)]
 		elif Input.is_action_pressed("backward") and not stunned:
+=======
+	if Input.is_action_just_pressed("forward"):
+		sfx.stream = sfxes[randi_range(3, 4)]
+		sfx.pitch_scale = randf_range(0.75, 1.25)
+		sfx.volume_db = 0
+	elif Input.is_action_just_pressed("backward"):
+		sfx.stream = sfxes[randi_range(0, 0)]
+		sfx.pitch_scale = randf_range(0.75, 1.25)
+		sfx.volume_db = 0
+	elif not Input.is_anything_pressed():
+		sfx.volume_db = clamp(sfx.volume_db - 0.5, -1000, 0)
+	if not sfx.playing:
+		sfx.pitch_scale = randf_range(0.75, 1.25)
+		if Input.is_action_pressed("forward"):
+			sfx.volume_db = 0
+			sfx.stream = sfxes[randi_range(3, 4)]
+		elif Input.is_action_pressed("backward"):
+>>>>>>> Stashed changes
 			sfx.volume_db = 0
 			sfx.stream = sfxes[randi_range(0, 0)]
 		else:

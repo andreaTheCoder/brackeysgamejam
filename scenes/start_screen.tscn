@@ -1,4 +1,10 @@
+<<<<<<< Updated upstream
 [ext_resource type="Script" uid="uid://bfvddbfj7ixi2" path="res://start_screen.gd" id="1_he1sj"]
+=======
+[gd_scene load_steps=6 format=3 uid="uid://bfvddbfj7ixi2"]
+
+[ext_resource type="Script" uid="uid://dd58gcv6q1sky" path="res://scripts/start_screen.gd" id="1_he1sj"]
+>>>>>>> Stashed changes
 [ext_resource type="Texture2D" uid="uid://b53pg8ei6xguk" path="res://assets/how to play.webp" id="2_he1sj"]
 [ext_resource type="Texture2D" uid="uid://cg5amng3ptfmi" path="res://assets/start.webp" id="3_he1sj"]
 [ext_resource type="Texture2D" uid="uid://cqx0w3clcb7kv" path="res://assets/how to play better.png" id="3_hm208"]

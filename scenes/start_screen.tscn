@@ -42,6 +42,6 @@ offset_right = 543.0
 offset_bottom = 671.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
-text = "Credits: super duper potato, human, Player_name, penguin"
+text = "Credits: super duper potato, human, player_name, penguin"
 
 [connection signal="pressed" from="Control/play" to="." method="_on_play_pressed"]

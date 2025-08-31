@@ -2,7 +2,7 @@ extends Node2D
 
 @export var front = true
 @onready var spawn_timer: Timer = $SpawnTimer
-@onready var bike: CharacterBody2D = $"../../"
+@onready var bike: CharacterBody2D = $"../../../Bike"
 
 var car_template = preload("res://scenes/NPCcar.tscn")
 
